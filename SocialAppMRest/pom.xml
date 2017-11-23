@@ -2,18 +2,19 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.niit</groupId>
-  <artifactId>SocialAppMiddRest</artifactId>
+  <artifactId>SocialAppMRest</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>SocialAppMiddRest Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  <name>SocialAppMRest Maven Webapp</name>
   
   <properties>
-    <javaee.version>7.0</javaee.version> 
-    <spring.version>4.2.5.RELEASE</spring.version> 
+    
+    <spring.version>4.2.5.RELEASE</spring.version>  
     <jackson.version>2.8.7</jackson.version> 
   </properties>
   
+  
+  <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -22,45 +23,27 @@
       <scope>test</scope>
     </dependency>
     
-   <dependency>
+    <dependency>
       <groupId>com.niit</groupId>
       <artifactId>SocialAppBackend</artifactId>
       <version>0.0.1-SNAPSHOT</version>
    </dependency>
     
     
-    <!--  JAVA EE API  -->
+    <dependency>
+  <groupId>javax.servlet</groupId> 
+  <artifactId>javax.servlet-api</artifactId> 
+  <version>3.1.0</version> 
+  </dependency>
   
-  <dependency>
-  <groupId>javax</groupId> 
-  <artifactId>javaee-api</artifactId> 
-  <version>7.0</version> 
-  <scope>provided</scope> 
-  </dependency>
-    
-   <!--  SPRING 
-  --> 
-  <dependency>
-  <groupId>org.springframework</groupId> 
-  <artifactId>spring-core</artifactId> 
-  <version>${spring.version}</version> 
-  </dependency>
   <dependency>
   <groupId>org.springframework</groupId> 
   <artifactId>spring-webmvc</artifactId> 
   <version>${spring.version}</version> 
   </dependency>
-  
-   <!--  Jackson 
-  --> 
-  <dependency>
-  <groupId>com.fasterxml.jackson.core</groupId> 
-  <artifactId>jackson-databind</artifactId> 
-  <version>${jackson.version}</version> 
-  </dependency>
     
   </dependencies>
   <build>
-    <finalName>SocialAppMiddRest</finalName>
+    <finalName>SocialAppMRest</finalName>
   </build>
 </project>
