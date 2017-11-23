@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body ng-app="app">
+	<div ng-controller="PersonCtrl">
+
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>FIRSTNAME</th>
+					<th>LASTNAME</th>
+					<th>EMAIL</th>
+					<th>PHONENUMBER</th>
+
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="p in persons">
+					<td>{{p.id}}</td>
+					<td>{{p.firstname}}</td>
+					<td>{{p.lastname}}</td>
+					<td>{{p.email}}</td>
+					<td>{{p.phonenumber}}</td>
+			</tbody>
+
+		</table>
+
+	</div>
+
+</body>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+<script type="text/javascript" src="js/service.js"></script>
+</html>

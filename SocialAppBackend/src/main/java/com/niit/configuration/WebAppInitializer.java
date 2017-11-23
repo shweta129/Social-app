@@ -6,7 +6,6 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		// TODO Auto-generated method stub
 		return new Class[]{WebConfig.class};
 	}
 
@@ -19,7 +18,7 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 	@Override
 	protected String[] getServletMappings() {
 		// TODO Auto-generated method stub
-		return null;
+		return new String[] {"/"};//any requests,forward the request to dispatcherServlet
 	}
 
 }
