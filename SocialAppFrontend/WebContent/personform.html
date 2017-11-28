@@ -1,0 +1,20 @@
+<div>
+
+	<form method="post">
+		<pre>
+Enter FirstName:   <input type="text" ng-model="person.firestname">
+Enter LastName:    <input type="text" ng-model="person.lastname">
+Enter Email:       <input type="text" ng-model="person.email"> 
+Enter PhoneNumber: <input type="text" ng-model="person.phonenumber">
+Enter Address:     <input type="text" ng-model="person.address">
+Enter Password:    <input type="text" ng-model="person.password">
+<button ng-click="savePerson()">Save Person</button>
+</pre>
+	</form>
+	{{result}}
+
+
+<div ng-include="'persons.html'"></div>
+</div>	
+
+

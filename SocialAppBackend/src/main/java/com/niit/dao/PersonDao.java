@@ -7,4 +7,8 @@ import com.niit.dto.Person;
 public interface PersonDao {
 
 	public List<Person> getAllPersons();
+
+	public void savePerson(Person person);
+
+	public void deletePerson(int id);
 }

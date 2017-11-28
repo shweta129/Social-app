@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body ng-app="app">
-	<div ng-controller="PersonCtrl">
+<div>
 
 		<table>
 			<thead>
@@ -15,6 +8,9 @@
 					<th>LASTNAME</th>
 					<th>EMAIL</th>
 					<th>PHONENUMBER</th>
+					<th>ADDRESS</th>
+					<th>PASSWORD</th>
+					<th>Action</th>
 
 				</tr>
 			</thead>
@@ -26,16 +22,14 @@
 					<td>{{p.lastname}}</td>
 					<td>{{p.email}}</td>
 					<td>{{p.phonenumber}}</td>
+					<td>{{p.address}}</td>
+					<td>{{p.password}}</td>
+					<td><a ng-click="deletePerson(p.id)"><span class="glyphicon glyphicon-trash"></span></a>
+					</td>
+					</tr>
+					
 			</tbody>
 
 		</table>
 
-	</div>
-
-</body>
-<script type="text/javascript"
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/controller.js"></script>
-<script type="text/javascript" src="js/service.js"></script>
-</html>
+</div>

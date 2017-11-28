@@ -26,6 +26,25 @@ public class PersonDaoImpl implements PersonDao {
 		
 	}
 
+	//@Override
+	public void savePerson(Person person) {
+		Session session = sessionFactory.getCurrentSession();
+		session.save(person);
+		
+	}
+
+	//@Override
+	public void deletePerson(int id) {
+		Session session =sessionFactory.getCurrentSession();
+		Person person = session.get(Person.class, id);
+		session.delete(person);
+		
+	}
+
 	
 	
 }
+
+	
+	
+
