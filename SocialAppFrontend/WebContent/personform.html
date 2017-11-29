@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 
 	<form method="post">
 		<pre>
@@ -15,6 +15,155 @@ Enter Password:    <input type="text" ng-model="person.password">
 
 
 <div ng-include="'persons.html'"></div>
+</div> -->	
+
+
+
+<!-- <div>
+<form method="post">
+
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="firstname">First name</label>
+      <input type="text" ng-model="person.firstname" class="form-control is-invalid" id="firstname" placeholder="First name"  required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="lastname">Last name</label>
+      <input type="text" ng-model="person.lastname" class="form-control is-invalid" id="lastname" placeholder="Last name" value="Otto" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 mb-3">
+      <label for="email">email</label>
+      <input type="text" ng-model="person.email" class="form-control is-invalid" id="email" placeholder="email" required>
+      <div class="invalid-feedback">
+        Please provide a valid email.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="phonenumber">phonenumber</label>
+      <input type="text" ng-model="person.phonenumber" class="form-control is-invalid" id="phonenumber" placeholder="phonenumber" required>
+      <div class="invalid-feedback">
+        Please provide a valid phonenumber.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="address">address</label>
+      <input type="text" ng-model="person.address" class="form-control is-invalid" id="address" placeholder="address" required>
+      <div class="invalid-feedback">
+        Please provide a valid address.
+      </div>
+    </div><br>
+    
+    <div class="col-md-3 mb-3">
+      <label for="password">password</label>
+      <input type="password" ng-model="person.password" class="form-control is-invalid" id="password" placeholder="password" required>
+      <div class="invalid-feedback">
+        Please provide a valid phonenumber.
+      </div>
+    </div>
+  </div>
+
+ <button ng-click="savePerson()">Save Person</button>
+  
+	</form>
+	{{result}}
+
+
+<div ng-include="'persons.html'"></div>
 </div>	
 
+ -->
 
+ 
+ <!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Spectre sign up form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <div class="signup__container">
+  <div class="container__child signup__thumbnail">
+    <div class="thumbnail__logo">
+      
+      <h1 class="logo__text">Spectre</h1>
+    </div>
+    <div class="thumbnail__content text-center">
+      <h1 class="heading--primary">Welcome to MI6.</h1>
+      <h2 class="heading--secondary">Are you ready to join the elite?</h2>
+    </div>
+    <div class="thumbnail__links">
+      <ul class="list-inline m-b-0 text-center">
+        <li><a href="http://alexdevero.com/" target="_blank"><i class="fa fa-globe"></i></a></li>
+        <li><a href="https://www.behance.net/alexdevero" target="_blank"><fa class="fa fa-behance"></fa></a></li>
+        <li><a href="https://github.com/alexdevero" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://twitter.com/alexdevero" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+    <div class="signup__overlay"></div>
+  </div>
+  <div class="container__child signup__form">
+    <form action="#">
+      <div class="form-group">
+        <label for="firstname">first Name</label>
+        <input class="form-control" ng-model="person.firstname" type="text" name="firstname" id="firstname" placeholder="first name" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input class="form-control" ng-model="person.lastname" type="text" name="lastname" id="lastname" placeholder="last name" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" ng-model="person.email" type="text" name="email" id="email" placeholder="james.bond@spectre.com" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="phonenumber">Mobile Number</label>
+        <input class="form-control" ng-model="person.phonenumber" type="text" name="phonenumber" id="phonenumber" placeholder="Mobile number" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input class="form-control" ng-model="person.address" type="text" name="address" id="address" placeholder="address" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" ng-model="person.password" type="password" name="password" id="password" placeholder="********" required />
+      </div>
+     
+      <div class="m-t-lg">
+        <ul class="list-inline">
+          <li>
+            <!-- <button ng-click="savePerson()" href="#/login">Save Person</button> -->
+         <button ng-click="savePerson()" href="#/login">Save Person</button>
+          </li>
+          <li>
+            <a class="signup__link" href="#">I am already a member</a>
+          </li>
+        </ul>
+      </div>
+    </form>
+    {{result}}  
+  </div>
+</div>
+  
+ <!-- <div ng-include="'persons.html'"></div>  -->
+</body>
+</html>
+ 

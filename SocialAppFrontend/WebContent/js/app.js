@@ -1,6 +1,9 @@
 /**
  * Angular module
  */
+//1st parameter is module name
+//2nd parameter is array of dependent modules[]-->no dependent module
+//['ng-route']==>for single page appliction
 var app=angular.module('app',['ngRoute'])
 app.config(function($routeProvider){
 	$routeProvider

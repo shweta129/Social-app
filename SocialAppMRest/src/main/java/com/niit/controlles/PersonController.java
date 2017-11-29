@@ -3,6 +3,8 @@ package com.niit.controlles;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.niit.dao.PersonDao;
+import com.niit.dto.ErroClazz;
 import com.niit.dto.Person;
 @Controller
 public class PersonController {
@@ -43,9 +46,23 @@ public class PersonController {
 	}
 	
 	@RequestMapping(value = "/deleteperson/{id}",method=RequestMethod.DELETE)
-	public @ResponseBody List<Person> deletePerson(@PathVariable int id){
-		personDao.deletePerson(id);
+	public ResponseEntity<?> deletePerson(@PathVariable int id){
+		try{
+			
+			personDao.deletePerson(id);
+		}
+		catch(Exception e){
+			ErroClazz error=new ErroClazz(1, "Person with" + id+ "doesn't exists");
+			return new ResponseEntity<ErroClazz>(error,HttpStatus.NOT_FOUND);
+			//2nd call back function[Error function]
+			//response.data = ErrorClazz obj in Json
+			//response.status=HttpStatus not found (404)
+		}
+		
 		List<Person> persons = personDao.getAllPersons();
-		return persons;
+		return new ResponseEntity<List<Person>>(persons,HttpStatus.OK);
+		//1st call bck function [success function]
+		//response.data=List<Person> in JSON
+		//response.status = HttpStatus.OK [200]
 	}
 }

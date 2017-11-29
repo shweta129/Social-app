@@ -40,7 +40,7 @@ app.controller('PersonCtrl',function($scope,PersonService){
 			console.log(response.status)
 		 },function(response){
 			 console.log(response.status)
-		 
+		     $scope.error=response.data
 		 })
 		 
 	 }
