@@ -4,6 +4,7 @@
 //1st parameter is module name
 //2nd parameter is array of dependent modules[]-->no dependent module
 //['ng-route']==>for single page appliction
+
 var app=angular.module('app',['ngRoute'])
 app.config(function($routeProvider){
 	$routeProvider
@@ -17,6 +18,11 @@ app.config(function($routeProvider){
 	.when('/personform',{
 		templateUrl:'personform.html',
 		controller:'PersonCtrl'
+	})
+	
+	.when('/getperson/:id',{
+		templateUrl:'personform.html',
+		controller:'EditPersonController'
 	})
 	
 	.otherwise({templateUrl:'home.html'})

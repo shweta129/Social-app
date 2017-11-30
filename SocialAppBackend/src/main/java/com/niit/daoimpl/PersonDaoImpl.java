@@ -41,6 +41,18 @@ public class PersonDaoImpl implements PersonDao {
 		
 	}
 
+	public Person getPerson(int id) {
+		Session session =sessionFactory.getCurrentSession();
+		Person person = (Person)session.get(Person.class, id);
+		return person;
+	}
+
+	public void updatePerson(Person person) {
+		Session session = sessionFactory.getCurrentSession();
+		session.update(person);
+		
+	}
+
 	
 	
 }

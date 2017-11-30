@@ -65,4 +65,28 @@ public class PersonController {
 		//response.data=List<Person> in JSON
 		//response.status = HttpStatus.OK [200]
 	}
+	
+	@RequestMapping(value="/getperson/{id}",method=RequestMethod.GET)
+	public ResponseEntity<?> getPerson(@PathVariable int id){
+		Person person=personDao.getPerson(id);
+		if(person==null){
+			ErroClazz error = new ErroClazz(1, "Person with id" + id+ "doesn't exists");
+			return new ResponseEntity<ErroClazz>(error,HttpStatus.NOT_FOUND);//404
+		}
+		
+		return new ResponseEntity<Person>(person,HttpStatus.OK);//200
+	}
+	
+	@RequestMapping(value="/updateperson",method=RequestMethod.PUT)
+	public ResponseEntity<?> updatePerson(@RequestBody Person person){
+		try{
+			personDao.updatePerson(person);
+			return new ResponseEntity<Person>(person,HttpStatus.OK);
+		}
+		catch(Exception e){
+			ErroClazz error=new ErroClazz(2, "Unable to update person details");
+			return new ResponseEntity<ErroClazz>(error,HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
 }

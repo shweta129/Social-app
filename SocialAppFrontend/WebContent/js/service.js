@@ -19,6 +19,14 @@ app.factory('PersonService',function($http){
 		return $http['delete']("http://localhost:8080/SocialAppMRest/deleteperson/"+id);
 	}
 	
+	personService.getPerson=function(id){
+		return $http.get("http://localhost:8080/SocialAppMRest/getperson/"+id)
+	}
+	
+	personService.updatePerson=function(person){
+		return $http.put("http://localhost:8080/SocialAppMRest/updateperson/",person);
+	}
+	
 	return personService;
 	
 })

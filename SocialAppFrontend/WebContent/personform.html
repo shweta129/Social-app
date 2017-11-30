@@ -1,79 +1,32 @@
-<!-- <div>
-
-	<form method="post">
-		<pre>
+<!--  <div>
+<pre>
+<form method="post">
+		
 Enter FirstName:   <input type="text" ng-model="person.firestname">
 Enter LastName:    <input type="text" ng-model="person.lastname">
 Enter Email:       <input type="text" ng-model="person.email"> 
 Enter PhoneNumber: <input type="text" ng-model="person.phonenumber">
 Enter Address:     <input type="text" ng-model="person.address">
 Enter Password:    <input type="text" ng-model="person.password">
+<div ng-if="!person.id">
 <button ng-click="savePerson()">Save Person</button>
+</div>
+<div ng-if="person.id"></div>
+<button ng-click="updatePerson()">Update Person</button>
+</div>
+</form>
 </pre>
-	</form>
-	{{result}}
+{{result}}
 
 
 <div ng-include="'persons.html'"></div>
-</div> -->	
+</div>  -->	
 
 
 
-<!-- <div>
-<form method="post">
-
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label for="firstname">First name</label>
-      <input type="text" ng-model="person.firstname" class="form-control is-invalid" id="firstname" placeholder="First name"  required>
-    </div>
-    <div class="col-md-6 mb-3">
-      <label for="lastname">Last name</label>
-      <input type="text" ng-model="person.lastname" class="form-control is-invalid" id="lastname" placeholder="Last name" value="Otto" required>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 mb-3">
-      <label for="email">email</label>
-      <input type="text" ng-model="person.email" class="form-control is-invalid" id="email" placeholder="email" required>
-      <div class="invalid-feedback">
-        Please provide a valid email.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="phonenumber">phonenumber</label>
-      <input type="text" ng-model="person.phonenumber" class="form-control is-invalid" id="phonenumber" placeholder="phonenumber" required>
-      <div class="invalid-feedback">
-        Please provide a valid phonenumber.
-      </div>
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="address">address</label>
-      <input type="text" ng-model="person.address" class="form-control is-invalid" id="address" placeholder="address" required>
-      <div class="invalid-feedback">
-        Please provide a valid address.
-      </div>
-    </div><br>
-    
-    <div class="col-md-3 mb-3">
-      <label for="password">password</label>
-      <input type="password" ng-model="person.password" class="form-control is-invalid" id="password" placeholder="password" required>
-      <div class="invalid-feedback">
-        Please provide a valid phonenumber.
-      </div>
-    </div>
-  </div>
-
- <button ng-click="savePerson()">Save Person</button>
-  
-	</form>
-	{{result}}
 
 
-<div ng-include="'persons.html'"></div>
-</div>	
 
- -->
 
  
  <!DOCTYPE html>
@@ -116,7 +69,7 @@ Enter Password:    <input type="text" ng-model="person.password">
     <div class="signup__overlay"></div>
   </div>
   <div class="container__child signup__form">
-    <form action="#">
+    <form action="#" method="post">
       <div class="form-group">
         <label for="firstname">first Name</label>
         <input class="form-control" ng-model="person.firstname" type="text" name="firstname" id="firstname" placeholder="first name" required />
@@ -150,11 +103,19 @@ Enter Password:    <input type="text" ng-model="person.password">
       <div class="m-t-lg">
         <ul class="list-inline">
           <li>
-            <!-- <button ng-click="savePerson()" href="#/login">Save Person</button> -->
-         <button ng-click="savePerson()" href="#/login">Save Person</button>
+            
+   
+     <div ng-if="!person.id">
+    <button ng-click="savePerson()">Save Person</button>
+    </div>
+    <div ng-if="person.id"></div>
+    <button ng-click="updatePerson()">Update Person</button>
+    </div>
+   
+         
           </li>
           <li>
-            <a class="signup__link" href="#">I am already a member</a>
+            <a class="signup__link" href="#/login">I am already a member</a>
           </li>
         </ul>
       </div>
@@ -163,7 +124,7 @@ Enter Password:    <input type="text" ng-model="person.password">
   </div>
 </div>
   
- <!-- <div ng-include="'persons.html'"></div>  -->
+ <div ng-include="'persons.html'"></div> 
 </body>
-</html>
+</html> 
  
