@@ -42,7 +42,7 @@ body .menu .mainmenu .menuitem {
   padding-bottom: 10px;
   text-align: center;
   cursor: pointer;
-  color: white;
+  color: black;
   font-size: 1.5rem;
 }
 body #findpass {

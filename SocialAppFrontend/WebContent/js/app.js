@@ -8,12 +8,24 @@
 var app=angular.module('app',['ngRoute'])
 app.config(function($routeProvider){
 	$routeProvider
-	.when('/persons',{
+	
+	
+	.when('/register',{
+		  templateUrl:'views/registrationform.html',//view ng-repeat="p in persons"
+		  controller:'UserController'    //Controller $scope.persons
+		
+		
+		})
+	
+	
+	/*.when('/persons',{
 	  templateUrl:'persons.html',//view ng-repeat="p in persons"
 	  controller:'PersonCtrl'    //Controller $scope.persons
 	
 	
 	})
+	
+	
 	
 	.when('/personform',{
 		templateUrl:'personform.html',
@@ -23,9 +35,9 @@ app.config(function($routeProvider){
 	.when('/getperson/:id',{
 		templateUrl:'personform.html',
 		controller:'EditPersonController'
-	})
+	})*/
 	
-	.otherwise({templateUrl:'home.html'})
+	.otherwise({templateUrl:'views/home.html'})
 	
 	
 })
