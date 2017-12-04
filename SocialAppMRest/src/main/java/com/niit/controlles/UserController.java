@@ -1,5 +1,8 @@
 package com.niit.controlles;
 
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,4 +51,38 @@ public class UserController {
 	}
 	return new ResponseEntity<User>(user,HttpStatus.OK);
 }
+	
+	
+	@RequestMapping(value="/login",method=RequestMethod.POST)
+	public ResponseEntity<?> login(@RequestBody User user,HttpSession session){
+		User validUser = userDao.login(user);
+		if(validUser==null)
+		{
+			ErroClazz erroClazz = new ErroClazz(4, "Invalid username/password");
+			return new ResponseEntity<ErroClazz>(erroClazz,HttpStatus.UNAUTHORIZED);//ErrorClazz,401
+		}
+		else{
+			validUser.setOnline(true);
+			session.setAttribute("username",validUser.getUsername());
+			userDao.updateUser(validUser);
+			return new ResponseEntity<User>(validUser,HttpStatus.OK);
+			
+		}
+	}
+	@RequestMapping(value="/logout",method=RequestMethod.GET)
+	public ResponseEntity<?> logout(HttpSession session){
+		String username = (String)session.getAttribute("username");
+		if(username==null){//without login
+			ErroClazz error=new ErroClazz(5, "Unauthoried access");
+			return new ResponseEntity<ErroClazz>(error,HttpStatus.UNAUTHORIZED);
+		}
+		User user = userDao.getUserByUsername(username);//sekect * from user where username=?
+		user.setOnline(false);
+		userDao.updateUser(user);//update user set online = false where username=?
+		session.removeAttribute("username");
+		session.invalidate();
+		
+		return new ResponseEntity<Void>(HttpStatus.OK);
+		
+	}
 }

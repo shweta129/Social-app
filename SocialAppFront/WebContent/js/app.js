@@ -1,6 +1,3 @@
-/**
- * Angular module
- */
 //1st parameter is module name
 //2nd parameter is array of dependent modules[]-->no dependent module
 //['ng-route']==>for single page appliction
@@ -17,16 +14,11 @@ app.config(function($routeProvider){
 		
 		})
 		
-	/*.when('/login',{
-		  templateUrl:'views/login.html',//view ng-repeat="p in persons"
-		  controller:'UserController'    //Controller $scope.persons
-		
-		
-		})*/
+	
 	
 	
 	.when('/login',{
-	  templateUrl:'views/loginUser.html',//view ng-repeat="p in persons"
+	  templateUrl:'views/loginForm.html',//view ng-repeat="p in persons"
 	  controller:'UserController'    //Controller $scope.persons
 	
 	
@@ -34,17 +26,9 @@ app.config(function($routeProvider){
 	
 	
 	
-	/*.when('/personform',{
-		templateUrl:'personform.html',
-		controller:'PersonCtrl'
-	})
 	
-	.when('/getperson/:id',{
-		templateUrl:'personform.html',
-		controller:'EditPersonController'
-	})*/
 	
-	/*.otherwise({templateUrl:'views/home.html'})*/
+	.otherwise({templateUrl:'views/home.html'})
 	
 	
 })

@@ -1,0 +1,104 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300'>
+<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,700,300'>
+<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+<!-- </head>
+
+<body> -->
+  <div class="signup__container">
+  <div class="container__child signup__thumbnail">
+    <div class="thumbnail__logo">
+      
+      <h1 class="logo__text">Spectre</h1>
+    </div>
+    <div class="thumbnail__content text-center">
+      <h1 class="heading--primary">Welcome to MI6.</h1>
+      <h2 class="heading--secondary">Are you ready to join the elite?</h2>
+    </div>
+    <div class="thumbnail__links">
+      <ul class="list-inline m-b-0 text-center">
+        <li><a href="http://alexdevero.com/" target="_blank"><i class="fa fa-globe"></i></a></li>
+        <li><a href="https://www.behance.net/alexdevero" target="_blank"><fa class="fa fa-behance"></fa></a></li>
+        <li><a href="https://github.com/alexdevero" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://twitter.com/alexdevero" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+    <div class="signup__overlay"></div>
+  </div>
+  
+  <div class="container__child signup__form">
+   <span style="color: red" ng-if="error.code==1">{{error.message}}</span>
+    <form action="#/login" method="post">
+      <div class="form-group">
+        <label for="username">User Name</label>
+        <input class="form-control" ng-model="user.username" type="text" name="username" id="username" placeholder="user name" required/>
+        <span style="color: red" ng-if="error.code==2">{{error.message}}</span>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input class="form-control" ng-model="user.password" type="password" name="password" id="password" placeholder="********" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="firstname">First Name</label>
+        <input class="form-control" ng-model="user.firstname" type="text" name="firstname" id="firstname" placeholder="first name" required />
+      </div>
+      
+      
+      <div class="form-group">
+        <label for="lastname">Last Name</label>
+        <input class="form-control" ng-model="user.lastname" type="text" name="lastname" id="lastname" placeholder="last name" required />
+      </div>
+      
+      
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input class="form-control" ng-model="user.email" type="text" name="email" id="email" placeholder="james.bond@spectre.com" required />
+         <span style="color: red" ng-if="error.code==3">{{error.message}}</span>
+      </div>
+      
+      <div class="form-group">
+        <label for="phonenumber">Mobile Number</label>
+        <input class="form-control" ng-model="user.phonenumber" type="text" name="phonenumber" id="phonenumber" placeholder="Mobile number" required />
+      </div>
+      
+      <div class="form-group">
+        <label for="role"> Select Role</label>
+        Employee
+        <input  ng-model="user.role" type="radio" value="Employee"   />
+        Alumni
+        <input  ng-model="user.role" type="radio" value="Alumni"  />
+        
+      </div>
+      
+      
+     
+      <div class="m-t-lg">
+        <ul class="list-inline">
+          <li>
+            
+   
+     <div>
+    <input type="submit" value="Register" ng-click="registerUser()">
+    </div>
+    
+   
+         
+          </li>
+          <li>
+            <a class="signup__link" href="#/login">I am already a member.</a>
+          </li>
+        </ul>
+      </div>
+    </form>
+     
+  </div>
+</div>
