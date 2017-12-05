@@ -2,7 +2,7 @@
  * UserController
  */
 
-app.controller('UserController',function($scope,UserService,$location){
+app.controller('UserController',function($scope,UserService,$location,$rootScope,$cookieStore){
 
   $scope.registerUser=function(){ //step 2.register.html page send request to controller 
 	console.log($scope.user)
@@ -20,10 +20,12 @@ app.controller('UserController',function($scope,UserService,$location){
 
   
   $scope.login=function(){
-  UserService.login($scope.user).then(function(response){//200
+  UserService.login($scope.user).then(function(response){//200,user
+	  $rootScope.currentUser=response.data
+	 $cookieStore.put('currentUser',response.data)
 		  $location.path('/home')
 	  },function(response){
-		  if(response.status==401){//400..
+		  if(response.status==401){//400.. errorclazz in json format
 			  $scope.error=response.data
 			  $location.path('/login')
 		  }

@@ -18,6 +18,10 @@ app.factory('UserService',function($http){
 	  
 	  return $http.post(BASE_URL + "/login",user)
   }
+  
+  userService.logout=function(){
+	  return $http.get(BASE_URL + "/logout")
+  }
 
   return userService;
   
