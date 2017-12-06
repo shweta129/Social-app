@@ -9,14 +9,20 @@ app.config(function($routeProvider){
 	
 	.when('/register',{
 		  templateUrl:'views/registrationform.html',//view ng-repeat="p in persons"
-		  controller:'UserController'    //Controller $scope.persons
+		  controller:'UserController'    //Controller $scope.user
 		
 		
 		})
 
 	.when('/login',{
 	  templateUrl:'views/loginForm.html',//view ng-repeat="p in persons"
-	  controller:'UserController'    //Controller $scope.persons
+	  controller:'UserController'    //Controller $scope.user
+	
+	})
+	
+	.when('/editprofile',{
+	  templateUrl:'views/userprofile.html',//view ng-repeat="p in persons"
+	  controller:'UserController'    //Controller $scope.user
 	
 	})
 	
@@ -26,6 +32,7 @@ app.config(function($routeProvider){
 })
 
 app.run(function($rootScope,$cookieStore,UserService,$location){
+	/*alert($cookieStore.get('currentUser'))*/
 	if($rootScope.currentUser==undefined)
 		$rootScope.currentUser=$cookieStore.get('currentUser')
 		

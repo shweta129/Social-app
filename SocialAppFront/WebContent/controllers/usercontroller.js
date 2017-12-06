@@ -4,6 +4,22 @@
 
 app.controller('UserController',function($scope,UserService,$location,$rootScope,$cookieStore){
 
+	//Only for edit ,  this statement wil get executed
+	//it will not execute for reistrtion
+	if($rootScope.currentUser!=undefined){//Fetch user details
+	 UserService.getUser().then(function(response){
+		 $scope.user=response.data //User Object
+	 },function(response){//401
+		 if(response.status==401){
+			 $location.path('/login')
+		 }
+		 
+	 })	
+		
+	}
+	
+	
+	
   $scope.registerUser=function(){ //step 2.register.html page send request to controller 
 	console.log($scope.user)
 	  UserService.registerUser($scope.user)//step.3
@@ -33,4 +49,23 @@ app.controller('UserController',function($scope,UserService,$location,$rootScope
 	  })
   }
 
+  
+  $scope.editUserProfile=function(){
+	  UserService.editUserProfile($scope.user).then(function(response){
+		  alert('update User Successfully')
+		  $location.path('/home')
+	  },function(response){//401,500
+		  if(response.status==401){
+			  $location.path('/login')
+		  if(response.status==500){
+			  $scope.error=response.data//Errorclazz
+			  $location.path('/editprofile')
+		  }
+		  }
+		  
+	  
+	  })
+  }
+  
+  
 })	
