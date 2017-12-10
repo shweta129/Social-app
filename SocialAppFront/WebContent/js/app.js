@@ -8,25 +8,37 @@ app.config(function($routeProvider){
 	
 	
 	.when('/register',{
-		  templateUrl:'views/registrationform.html',//view ng-repeat="p in persons"
-		  controller:'UserController'    //Controller $scope.user
+		  templateUrl:'views/registrationform.html',   //view ng-repeat="p in persons"
+		  controller:'UserController'                  //Controller $scope.user
 		
 		
 		})
 
 	.when('/login',{
-	  templateUrl:'views/loginForm.html',//view ng-repeat="p in persons"
-	  controller:'UserController'    //Controller $scope.user
+	  templateUrl:'views/loginForm.html',     //view ng-repeat="p in persons"
+	  controller:'UserController'             //Controller $scope.user
 	
 	})
 	
 	.when('/editprofile',{
-	  templateUrl:'views/userprofile.html',//view ng-repeat="p in persons"
-	  controller:'UserController'    //Controller $scope.user
+	  templateUrl:'views/userprofile.html',   //view ng-repeat="p in persons"
+	  controller:'UserController'             //Controller $scope.user
 	
 	})
 	
+	.when('/addjob',{                    //data is from jobform.html to controller
+	  templateUrl:'views/jobform.html',  //view ng-repeat="p in persons"
+	  controller:'JobController'         //Controller $scope.user
+	
+	})
 
+	
+	.when('/alljobs',{                    //from controller to view[$scope.person=[]]
+	  templateUrl:'views/joblist.html',  //view ng-repeat="p in persons"
+	  controller:'JobController'         //Controller $scope.user
+	
+	})
+	
 	.otherwise({templateUrl:'views/home.html'})
 	
 })

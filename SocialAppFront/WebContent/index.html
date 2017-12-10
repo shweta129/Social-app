@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- ------------------------------Link Starts--------------------------------------------- -->
-<!-- Bootstrap,Angular Js,Angular Route Js -->
+------------------------------Link Starts---------------------------------------------
+Bootstrap,Angular Js,Angular Route Js
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -20,11 +20,13 @@
 <link href="css/sample.css" rel="stylesheet">
 
 
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!-- ---------------------------End--------------------------------------------- -->
+---------------------------End---------------------------------------------
 <title>Insert title here</title>
+
+
 </head>
 <body ng-app="app">
 <header>
@@ -39,12 +41,23 @@
     <img src="images/logo.jpg" alt="logo" style="width:70px;">
       </a>
     </li>
-   <!-- ng-show="true" if currentUser.username is not undefined -->
-   <!-- if currentUser.username is undefined,ng-show="false" -->
+   ng-show="true" if currentUser.username is not undefined
+   if currentUser.username is undefined,ng-show="false"
    <ul class="nav navbar-nav"><ul class="nav navbar-nav">
      <li><a href="#/home.html" ng-show="currentUser.username">Home</a></li>
       <li><a href="#/editprofile" ng-show="currentUser.username">EditUser</a></li>
       <li><a href="" ng-show="currentUser.username">Welcome {{currentUser.username}}</a></li>
+  
+  
+  
+      <li class ="dropdown"><a href="" class="dropdown-toggle" 
+      data-toggle="dropdown" ng-show="currentUser.username">Job<b class="caret"></b></a>
+       <ul class="dropdown-menu">
+         <li><a href="#/addjob" ng-show="currentUser.role=='ADMIN'">Add Job</a></li>
+          <li><a href="#/alljobs">Get All Job</a></li>
+       </ul></li>
+      
+      
       <li><a href="" ng-show="currentUser.username" ng-click="logout()">Logout</a></li>
 
    </ul>
@@ -61,10 +74,10 @@
   
   
   
-<!-- <div class="container">
+<div class="container">
   <h3>Right Aligned Navbar</h3>
   <p>The .navbar-right class is used to right-align navigation bar buttons.</p>
-</div> -->
+</div>
 
 
 
@@ -95,5 +108,111 @@
 <script type="text/javascript" src="controllers/usercontroller.js"></script>
 <script type="text/javascript" src="services/userservice.js"></script>
 
+
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Social App</title>
+<!-- ------------------------------Link Starts---------------------------------------------
+Bootstrap,Angular Js,Angular Route Js -->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+
+
+
+<!-- navbar -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  
+<!---------------------------End--------------------------------------------->
+
+
+ 
+<!-- <link href="css/style.css" rel="stylesheet"> -->
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style> 
+</head>
+<body ng-app="app">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a  href="#/home.html"ng-show="currentUser.username" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><img src="images/logo.jp" alt="logo" style="width:50px;"></a>
+  <a href="#/home.html" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="home"><i class="fa fa-home" style="font-size:20px;"></i>Home</a>
+  <a href="#/home.html" ng-show="currentUser.username">Welcome {{currentUser.username}}</a>
+  <a href="#/editprofile" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Edit User Profile"><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:25px;"></i></a>
+ <!--  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> -->
+ 
+
+ 
+  <a href="#" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe" style="font-size:25px;"></i></a>
+ 
+  <a href="#" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"style="font-size:25px;"></i></a>
+  
+  <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button w3-padding-large" title="Job"><i class="fa fa-graduation-cap " style="font-size:25px;"><b class="fa fa-angle-double-down " style="font-size:25px;"></b></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:45px;"></span></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+      <a href="#/addjob" class="w3-bar-item w3-button">Add Job</a>
+      <a href="#/alljobs" ng-show="currentUser.role=='ADMIN'" class="w3-bar-item w3-button">List of Profile</a>
+     
+    </div>
+  </div>
+  
+  
+  
+  <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:30px;">3</span></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+      <a href="#" class="w3-bar-item w3-button">One new friend request</a>
+      <a href="#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
+      <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
+    </div>
+  </div>
+  
+  <a href="#" ng-show="currentUser.username"  class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"><img src="/w3images/avatar2.png" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a>
+  <a  href="#" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><img src="images/logo.jp" alt="logo" style="width:50px;"></a>
+  <a href="#/register" ng-hide="currentUser.username"  class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="User registration"><i class="fa fa-user" style="font-size:25px;"></i>sign up</a>
+  <a href="#/login" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log in"><i class="fa fa-sign-in" style="font-size:25px;"></i>sign in</a>
+  <a href=""  ng-show="currentUser.username" ng-click="logout()" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log out"><i class="fa fa-power-off" style="font-size:20px;"></i></a>
+   
+
+ </div>
+</div>
+
+<div ng-view>
+</div>
+
+</body>
+
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.js"></script>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js"></script>		
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="controllers/usercontroller.js"></script>
+<script type="text/javascript" src="services/userservice.js"></script>
+<script type="text/javascript" src="controllers/jobcontroller.js"></script>
+<script type="text/javascript" src="services/jobservice.js"></script>
 
 </html>
