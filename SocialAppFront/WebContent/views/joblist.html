@@ -1,6 +1,8 @@
 <br><br><br><br>
+Search<input type="text" ng-model="search" class="pull pull-left">
 <table class="table">
 	<thead>
+	
 		<tr>
 			<th>Job Title</th>
 			<th>Skills Required</th>
@@ -8,8 +10,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="job in jobs">
-			<td><a href="" ng-click="getJob(job.id)">{{job.jobTitle}}</a></td>
+		<tr ng-repeat="job in jobs | filter:search">
+			<td>
+			<a href="#/getJob/{{job.id}}" >{{job.jobTitle}}</a>
+			</td>
 			<td>{{job.skillsRequired}}</td>
 			<td>{{job.postedOn | date:'medium'}}</td>
 		</tr>
@@ -19,7 +23,7 @@
 
 
 
-<div ><!-- ng-show="showDetails" -->
+<!-- <div >ng-show="showDetails"
 	<h3>Job Details</h3>
 	<pre>
 JobTitle: {{job.jobTitle}}
@@ -28,9 +32,11 @@ Skills Required:{{job.skillsRequired}}
 Location:{{job.location}}
 Company Name:{{job.companyname}}
 Salary:{{job.salary}}
-Years Of Exp: {{job.yrsOfExp}}
 Posted On: {{job.postedOn | date : 'medium'}}
+Years Of Exp: {{job.yrsOfExp}}
+
 
 
 </pre>
 </div>
+ -->

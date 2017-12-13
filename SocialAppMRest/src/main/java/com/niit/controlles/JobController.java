@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
-import javax.swing.text.html.parser.Entity;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,23 +13,24 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.niit.dao.JobDao;
 import com.niit.dao.UserDao;
 import com.niit.dto.ErroClazz;
 import com.niit.dto.Job;
-import com.niit.dto.Person;
 import com.niit.dto.User;
 
 @Controller
 public class JobController {
 	
-	@Autowired
-	UserDao userDao;
 	
 	@Autowired
 	JobDao jobDao;
+	
+	@Autowired
+	UserDao userDao;
+	
+	
 	
 	@RequestMapping(value = "/savejob" ,method=RequestMethod.POST)
 	public ResponseEntity<?> saveJob(@RequestBody Job job,HttpSession session){
@@ -70,14 +70,14 @@ public class JobController {
 	return new ResponseEntity<List<Job>>(jobs,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value="/getjob/{jobId}")
-	public ResponseEntity<?> getJob(@PathVariable int jobId,HttpSession session){
+	@RequestMapping(value="/getjob/{id}",method=RequestMethod.GET)
+	public ResponseEntity<?> getJob(@PathVariable int id,HttpSession session){
 		String username=(String)session.getAttribute("username");
 		if(username==null){
 			ErroClazz error = new ErroClazz(5, "Unauthorized access");
 		    return new ResponseEntity<ErroClazz>(error,HttpStatus.UNAUTHORIZED);
 		}
-		Job job=jobDao.getJob(jobId);
+		Job job=jobDao.getJob(id);
 		return new ResponseEntity<Job>(job,HttpStatus.OK);
 	}
 	

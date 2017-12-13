@@ -39,6 +39,18 @@ app.config(function($routeProvider){
 	
 	})
 	
+	.when('/addblog',{                    //view to controller
+	  templateUrl:'views/blogform.html',  //view ng-repeat="p in persons"
+	  controller:'BlogPostController'         //Controller $scope.user
+	
+	})
+	
+	.when('/getJob/:id',{                    //view to controller
+	  templateUrl:'views/profilejob.html',  //view ng-repeat="p in persons"
+	  controller:'JobController'         //Controller $scope.user
+	
+	})
+	
 	.otherwise({templateUrl:'views/home.html'})
 	
 })

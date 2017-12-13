@@ -14,7 +14,7 @@ app.factory('JobService',function($http){
 	        }
 	
 	        jobService.getJob=function(jobId){
-	        	return $http.get("http://localhost:8080/SocialAppMRest/getjob"+jobId)
+	        	return $http.get("http://localhost:8080/SocialAppMRest/getjob/"+jobId)
 	        }
 	
 			return jobService;
