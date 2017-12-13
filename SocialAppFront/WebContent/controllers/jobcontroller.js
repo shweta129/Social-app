@@ -6,6 +6,8 @@ app.controller('JobController',function($scope,JobService,$location,$routeParams
 	//show details only user click on the perticular person link
 	/*$scope.showDetails=false*/
 
+	
+	//fetch the job of perticular user by thr id
 	var jobId=$routeParams.id;
 	
 	/*$scope.showDetails=true*/
@@ -46,7 +48,7 @@ app.controller('JobController',function($scope,JobService,$location,$routeParams
 					}
 				})
 	}
-	//fetch the job of perticular user by thr id
+	
 	
 		
 	

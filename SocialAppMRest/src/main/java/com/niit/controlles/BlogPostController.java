@@ -33,7 +33,7 @@ public class BlogPostController {
 		if(username==null)
 		{
 			ErroClazz error=new ErroClazz(5, "Unauthorized access");
-			return new ResponseEntity<ErroClazz>(error,HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<ErroClazz>(error,HttpStatus.UNAUTHORIZED);//401
 		}
 		User user=userDao.getUserByUsername(username);//select * from user where username = "adam"
 		blogPost.setPostedOn(new Date());
@@ -44,7 +44,7 @@ public class BlogPostController {
 		}catch(Exception e)
 		{
 		ErroClazz error= new ErroClazz(8, "Unable to insert blog Details" + e.getMessage());
-		return new ResponseEntity<ErroClazz>(error,HttpStatus.INTERNAL_SERVER_ERROR);
+		return new ResponseEntity<ErroClazz>(error,HttpStatus.INTERNAL_SERVER_ERROR);//500
 		}
 		return new ResponseEntity<BlogPost>(blogPost,HttpStatus.OK);
 	}
