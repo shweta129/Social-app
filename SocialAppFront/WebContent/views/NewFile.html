@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 
 <title>Social App</title>
-<!-- ------------------------------Link Starts----------------------------------------------->
-<!-- Bootstrap,Angular Js,Angular Route Js  -->
+------------------------------Link Starts---------------------------------------------
+Bootstrap,Angular Js,Angular Route Js
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -18,46 +17,51 @@
 
 
 
-<!-- navbar -->
+navbar
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<link rel="stylesheet" href="css/index.css">
+
   
-<!---------------------------End--------------------------------------------->
+-------------------------End-------------------------------------------
 
 
  
-
+<link href="css/style.css" rel="stylesheet">
 <style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
-
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+/* body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-quarter img{margin-bottom: -6px; cursor: pointer}
-.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s} */
 </style> 
 </head>
-<body ng-app="app">
+<body ng-app="app" class="w3-light-grey">
 
 
+Sidebar/menu
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a> 
+  <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">PORTFOLIO</a> 
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a> 
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a>
+</nav>
 
-
-
-<!-- Navbar -->
+Overlay effect when opening sidebar on small screens
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+Navbar
 <div class="w3-top">
  <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
- 
-    <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
   <a ng-show="currentUser.username" class="w3-bar-item w3-button  w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a  href="#/home.html"ng-show="currentUser.username" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><img src="images/logo.jp" alt="logo" style="width:50px;"></a>
   <a href="#/home.html" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="home"><i class="fa fa-home" style="font-size:20px;"></i></a>
- 
+  <a href="#/home.html" ng-show="currentUser.username" >Welcome {{currentUser.username}}</a>
   <a href="#/editprofile" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Edit User Profile"><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:20px;"></i></a>
- <!--  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> -->
+  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
  
-<!-- <p><i class="w3-jumbo w3-spin fa fa-home"></i></p> -->
+<p><i class="w3-jumbo w3-spin fa fa-home"></i></p>
  
   <a href="#" ng-show="currentUser.username" class="w3-bar-item w3-button w3-center w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe" style="font-size:20px;"></i></a>
  
@@ -90,31 +94,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
       <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
     </div>
   </div>
-  
-  <a  href="javascript:void(0)" class="w3-right w3-button" onclick="w3_open()">☰</a>
-  <!-- <a href="#" ng-show="currentUser.username"  class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"><img src="/w3images/avatar2.png" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a> -->
+   <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+  <a href="#" ng-show="currentUser.username"  class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"><img src="/w3images/avatar2.png" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a>
   <a  href="#" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><img src="images/logo.jp" alt="logo" style="width:50px;"></a>
   <a href="#/register" ng-hide="currentUser.username"  class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="User registration">sign up</a>
   <a href="#/login" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log in">sign in</a>
   <a href=""  ng-show="currentUser.username" ng-click="logout()" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log out"><i class="fa fa-power-off" style="font-size:20px;"></i></a>
-  <li ng-show="currentUser.username" class=" w3-right"> Welcome {{currentUser.username}}</li> 
-   
-   
-   
-   <!-- Sidebar/menu -->
-   <br><br>
-<div class="w3-sidebar w3-bar-block w3-black w3-animate-right  w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
- <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a> 
-  <li href="#"  class="w3-bar-item w3-button w3-center w3-padding-16">Friends</li> 
-    <form>
-       <input type="text" name="search" placeholder="Search..">
-   </form>
-  
-  <!-- <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a> 
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a> -->
-</div> 
-
-
+ 
 
  </div>
 </div>
@@ -146,8 +132,6 @@ function onClick(element) {
 
 </script>
 
-
-
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
 <script type="text/javascript"
@@ -161,4 +145,4 @@ function onClick(element) {
 <script type="text/javascript" src="services/jobservice.js"></script>
 <script type="text/javascript" src="controllers/blogpostcontroller.js"></script>
 <script type="text/javascript" src="services/blogservice.js"></script>
-</html>
+</html> 
