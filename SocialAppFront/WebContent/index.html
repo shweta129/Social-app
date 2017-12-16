@@ -20,7 +20,7 @@
 
 <!-- navbar -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-pink.css">
+ <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-#3d1556.css"> 
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -36,6 +36,17 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
 
 .w3-quarter img{margin-bottom: -6px; cursor: pointer}
 .w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+.input {
+  background-image: url('/css/searchicon.png');
+  background-position: 7px 10px;
+  background-repeat: no-repeat;
+  width: 60%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
 </style> 
 </head>
 
@@ -48,31 +59,43 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
  <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
  
     <div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
+  
   <a ng-show="currentUser.username" class="w3-bar-item w3-button  w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a  href="#/home.html"ng-show="currentUser.username" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><img src="images/logo.jp" alt="logo" style="width:50px;"></a>
+   <!-- --------seach bar------- -->
+    <div class="col-sm-3 col-md-3 pull-left" ng-show="currentUser.username" >
+   <form class="navbar-form" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+  </div>
+  <!-- -----------end-------------- -->
   <a href="#/home.html" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="home"><i class="fa fa-home" style="font-size:20px;"></i></a>
  
-  <a href="#/editprofile" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Edit User Profile"><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:20px;"></i></a>
+  <a href="#/editprofile" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Edit User Profile"><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size:19px;"></i></a>
  <!--  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> -->
  
 <!-- <p><i class="w3-jumbo w3-spin fa fa-home"></i></p> -->
  
-  <a href="#" ng-show="currentUser.username" class="w3-bar-item w3-button w3-center w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe" style="font-size:20px;"></i></a>
+  <a href="#" ng-show="currentUser.username" class="w3-bar-item w3-button w3-center w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-globe" style="font-size:19px;"></i></a>
  
-  <a href="#" ng-show="currentUser.username" class="w3-bar-item w3-button w3-center w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"style="font-size:20px;"></i></a>
+  <a href="#" ng-show="currentUser.username" class="w3-bar-item w3-button w3-center w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"style="font-size:19px;"></i></a>
   
-  <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-center">
-    <button class="w3-button w3-padding-large" title="Job"><i class="fa fa-graduation-cap " style="font-size:20px;"><b class="fa fa-angle-double-down " style="font-size:25px;"></b></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:45px;"></span></button>     
+ <!--  <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-center w3-hover-white">
+    <button class="w3-button w3-padding-large" title="Job"><i class="fa fa-graduation-cap " style="font-size:15px;"><b class="fa fa-angle-double-down " style="font-size:15px;"></b></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:45px;"></span></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="#/addjob" ng-show="currentUser.role=='ADMIN'" class="w3-bar-item w3-button">Add Job</a>
       <a href="#/alljobs"  class="w3-bar-item w3-button">List of Profile</a>
      
     </div>
-  </div>
+  </div> -->
   
-  <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-center">
-    <button class="w3-button w3-padding-large" title="Job"><i class="fa fa-comments-o" style="font-size:25px;"><b class="fa fa-angle-double-down " style="font-size:25px;"></b></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:45px;"></span></button>     
+  <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-center w3-hover-white">
+    <button class="w3-button w3-padding-large" title="Job"><i class="fa fa-comments-o" style="font-size:19px;"><b class="fa fa-angle-double-down " style="font-size:17px;"></b></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:45px;"></span></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="#/addblog"  class="w3-bar-item w3-button">Add Blog Post</a>
       <a href="#/getblogs"  class="w3-bar-item w3-button">Get All Blogs</a>
@@ -81,8 +104,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
   </div>
   
   
-  <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small">
-    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:30px;">3</span></button>     
+  <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-hover-white">
+    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell" style="font-size:16px;"></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:17px;">3</span></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="#" class="w3-bar-item w3-button">One new friend request</a>
       <a href="#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
@@ -90,25 +113,40 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
     </div>
   </div>
   
-  <a  href="javascript:void(0)" class="w3-right w3-button" onclick="w3_open()">☰</a>
+  <a  href="javascript:void(0)" class="w3-right w3-button w3-hover-white w3-hide-small w3-padding-large" onclick="w3_open() "><span class="glyphicon glyphicon-th-list" style="font-size:19px;"></span></a>
   <!-- <a href="#" ng-show="currentUser.username"  class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"><img src="/w3images/avatar2.png" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a> -->
   <a  href="#" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><img src="images/logo.jp" alt="logo" style="width:50px;"></a>
   <a href="#/register" ng-hide="currentUser.username"  class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="User registration">sign up</a>
   <a href="#/login" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log in">sign in</a>
-  <a href=""  ng-show="currentUser.username" ng-click="logout()" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log out"><i class="fa fa-power-off" style="font-size:20px;"></i></a>
-  <li ng-show="currentUser.username" class=" w3-right"> Welcome {{currentUser.username}}</li> 
+  <a href=""  ng-show="currentUser.username" ng-click="logout()" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log out"><i class="fa fa-power-off" style="font-size:19px;"></i></a>
+  <div ng-show="currentUser.username" class=" w3-right w3-padding-large"> Welcome {{currentUser.username}}</div> 
    
-   
+    <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-center w3-hover-white">
+    <button class="w3-button w3-padding-large" title="Job"><i class="fa fa-graduation-cap " style="font-size:17px;"><b class="fa fa-angle-double-down " style="font-size:18px;"></b></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:45px;"></span></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+      <a href="#/addjob" ng-show="currentUser.role=='ADMIN'" class="w3-bar-item w3-button">Add Job</a>
+      <a href="#/alljobs"  class="w3-bar-item w3-button">List of Profile</a>
+     
+    </div>
+  </div>
    
    <!-- Sidebar/menu -->
    <br><br>
-<div class="w3-sidebar w3-bar-block w3-black w3-animate-right  w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;" id="mySidebar">
+<div class="w3-sidebar w3-bar-block w3-black w3-animate-right  w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;font-size:17px;" id="mySidebar">
  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a> 
   <li href="#"  class="w3-bar-item w3-button w3-center w3-padding-16">Friends</li> 
-    <form>
-       <input type="text" name="search" placeholder="Search..">
-   </form>
-  
+     <!-- --------seach bar------- -->
+    <div class="col-sm-3 col-md-12 pull-center" ng-show="currentUser.username">
+   <form  role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" name="q">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+  </div>
+  <!-- -----------end-------------- -->
   <!-- <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">ABOUT ME</a> 
   <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">CONTACT</a> -->
 </div> 
@@ -160,4 +198,5 @@ function onClick(element) {
 <script type="text/javascript" src="services/jobservice.js"></script>
 <script type="text/javascript" src="controllers/blogpostcontroller.js"></script>
 <script type="text/javascript" src="services/blogservice.js"></script>
+<script type="text/javascript" src="controllers/blogdetailscontroller.js"></script>
 </html>

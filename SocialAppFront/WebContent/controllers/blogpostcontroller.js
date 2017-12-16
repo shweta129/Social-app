@@ -2,7 +2,7 @@
  * BlogController
  */
 
-app.controller('BlogPostController',function($scope,BlogService,$location){
+app.controller('BlogPostController',function($scope,BlogService,$location,$rootScope){
 	
 	$scope.saveBlog=function(){
 		BlogService.saveBlog($scope.blog)
@@ -33,7 +33,8 @@ app.controller('BlogPostController',function($scope,BlogService,$location){
 		}
 	
 	})
-	
+	if($rootScope.currentUser.role=='ADMIN')
+	{
 	BlogService.getBlogsWaitingForApproval().then(function(response){
 		$scope.blogsWaitingForApproval=response.data  //select * from blogpost where approved=0
 	},function(response){
@@ -46,4 +47,6 @@ app.controller('BlogPostController',function($scope,BlogService,$location){
 				}
 		}
 	})
+	
+	}
 })

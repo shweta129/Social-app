@@ -57,6 +57,20 @@ app.config(function($routeProvider){
 		  controller:'BlogPostController'         //Controller $scope.user
 		
 		})
+		
+		
+	.when('/admin/getblog/:id',{                    
+	  templateUrl:'views/approvalform.html',  //view ng-repeat="p in persons"
+	  controller:'BlogDetailController'         //Controller $scope.user
+	
+	})	
+	
+	
+	.when('/getblog/:id',{                   
+	  templateUrl:'views/blogdetails.html',  //view ng-repeat="p in persons"
+	  controller:'BlogDetailController'         //Controller $scope.user
+	
+	})	
 	
 	.otherwise({templateUrl:'views/home.html'})
 	
