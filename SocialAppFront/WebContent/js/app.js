@@ -71,6 +71,13 @@ app.config(function($routeProvider){
 	  controller:'BlogDetailController'         //Controller $scope.user
 	
 	})	
+		
+	 
+	/* .when('/addblog',{                   
+		 templateUrl:'views/home.html',  //view ng-repeat="p in persons"
+		  controller:'BlogPostController'        //Controller $scope.user
+	
+	})	*/
 	
 	.otherwise({templateUrl:'views/home.html'})
 	
