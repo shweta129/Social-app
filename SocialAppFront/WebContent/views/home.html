@@ -1,27 +1,68 @@
-<!-- <!DOCTYPE html>
-<html>
+
+<!-- <html>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1"> --> <br>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css"> 
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/home.css">
-
 <style>
-html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size: 16px;}
+img {margin-bottom: -8px;}
+.mySlides {display: none;}
 </style>
-<body class="w3-theme-l5">
+<body class="w3-content w3-black" style="max-width:1500px;">
+
+
+
+<!-- Header with full-height image -->
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-left w3-text-white" style="padding:48px">
+    <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
+    <span class="w3-large">Freedome, to share what in your mind , Learn more and start today.</span>
+    <!-- <p><a href="#about" class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn more and start today</a></p> -->
+  </div> 
+  <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button>
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="images/H2.jpg" alt="Image 1" style="min-width:400px" width="1500" height="300;">
+    <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+     <!--  <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge">Take photos with our app</h1>
+        <hr class="w3-opacity">
+        <p>Super simple installment: free of charge</p>
+        <p><button class="w3-button w3-block w3-green w3-round" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button></p>
+      </div> -->
+    </div>
+  </div>
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="images/H4.jpg" alt="Image 2" style="min-width:400px" width="1500" height="300;">
+    <!-- <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge w3-text-red"><b>CLICK!</b> Fast and Easy</h1>
+        <hr class="w3-opacity">
+        <p>Choose from thousands of features</p>
+        <p><button class="w3-button w3-block w3-red w3-round" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button></p>
+      </div>
+    </div> -->
+  </div>
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="images/H5.jpg" alt="Image 3" style="min-width:400px" width="1500" height="300;">
+    
+  </div>
+  <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
+  <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
+</header>
 
 
 <!-- Page Container -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
-  <!-- The Grid -->
+ <!--  The Grid -->
   <div class="w3-row">
     <!-- Left Column -->
     <div class="w3-col m3">
-      <!-- Profile -->
+     <!--  Profile -->
       <div class="w3-card w3-round w3-white">
         <div class="w3-container">
          <h4 class="w3-center">My Profile</h4>
@@ -34,7 +75,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       </div>
       <br>
       
-      <!-- Accordion -->
+     <!--  Accordion -->
       <div class="w3-card w3-round">
         <div class="w3-white">
           <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
@@ -73,7 +114,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       </div>
       <br>
       
-      <!-- Interests --> 
+     <!--  Interests --> 
       <div class="w3-card w3-round w3-white w3-hide-small">
         <div class="w3-container">
           <p>Interests</p>
@@ -105,8 +146,327 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     
     <!-- End Left Column -->
     </div>
+
+<div class="w3-col m9">
+   
+      <div class="w3-row-padding">
+         <div class="w3-col m20">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+              <h1 class="w3-jumbo"><b>The App</b></h1>
+      <h1 class="w3-xxxlarge w3-text-green"><b>Why This App?</b></h1>
+      <p><span class="w3-xlarge">You can share what is in your mind,</span> people comments and likes your Post.You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small" onclick="document.getElementById('download').style.display='block'">
+        <i class="fa fa-download"></i> Download Application
+      </button>
+      <p>Available for <i class="fa fa-android w3-xlarge w3-text-green"></i> <i class="fa fa-apple w3-xlarge"></i> <i class="fa fa-windows w3-xlarge w3-text-blue"></i></p>
+    </div>
+    <div class="w3-col l4 m6">
+      <img src="/w3images/img_app.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471">
+      <div class="w3-center w3-hide-large w3-hide-medium"><br><br><br>
+        <button class="w3-button w3-block w3-padding-large" onclick="document.getElementById('download').style.display='block'">
+          <i class="fa fa-download"></i> Download Application
+        <br><br><br><br><br><br>
+            </div>
+          </div>
+        </div>
+        <br>
+      </div> 
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<!-- Modal -->
+<div id="download" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-white">
+      <i onclick="document.getElementById('download').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">DOWNLOAD</h2>
+      <p>Download the app in AppStore, Google Play or Microsoft Store.</p>
+      <i class="fa fa-android w3-large"></i> <i class="fa fa-apple w3-large"></i> <i class="fa fa-windows w3-large"></i>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('download').style.display='none'">Fake Download</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Features Section -->
+<div class="w3-container w3-padding-64 w3-dark-grey w3-center">
+  <h1 class="w3-jumbo"><b>Features</b></h1>
+  <p>This app is just so lorem ipsum.</p>
+
+  <div class="w3-row" style="margin-top:64px">
+    <div class="w3-col s3">
+      <i class="fa fa-bolt w3-text-orange w3-jumbo"></i>
+      <p>Fast</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-heart w3-text-red w3-jumbo"></i>
+      <p>Loved</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-comments-o w3-text-white w3-jumbo"></i>
+      <p>Blogs</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-bell w3-text-yellow w3-jumbo"></i>
+      <p>Notifications</p>
+    </div>
+  </div>
+
+  <div class="w3-row" style="margin-top:64px">
+    <div class="w3-col s3">
+      <i class="fa fa-graduation-cap w3-text-black w3-jumbo"></i>
+      <p>Job</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-envelope w3-text-blue w3-jumbo"></i>
+      <p>chat</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-home w3-text-amber w3-jumbo"></i>
+      <p>Home</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-pencil-square-o w3-text-cyan w3-jumbo"></i>
+      <p>Edit Profile</p>
+    </div>
+  </div>
+  
+  <div class="w3-row" style="margin-top:64px">
+    <div class="w3-col s3">
+      <i class="fa fa-user w3-text-sand w3-jumbo"></i>
+      <p>Friends</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-shield w3-text-orange w3-jumbo"></i>
+      <p>Stabile</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-wifi w3-text-grey w3-jumbo"></i>
+      <p>Connected</p>
+    </div>
+    <div class="w3-col s3">
+      <i class="fa fa-image w3-text-pink w3-jumbo"></i>
+      <p>HD</p>
+    </div>
+  </div>
+</div>
+
+<!-- Pricing Section -->
+<!-- <div class="w3-padding-64 w3-center w3-white">
+  <h1 class="w3-jumbo"><b>Pricing</b></h1>
+  <p class="w3-large">Choose a pricing plan that fits your needs.</p>
+  <div class="w3-row-padding" style="margin-top:64px">
+    <div class="w3-half w3-section">
+      <ul class="w3-ul w3-card w3-hover-shadow">
+        <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+        <li class="w3-padding-16"><b>250</b> Photos</li>
+        <li class="w3-padding-16"><b>10</b> Features</li>
+        <li class="w3-padding-16"><b>No</b> Ads</li>
+        <li class="w3-padding-16"><b>Office hours</b> Support</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-opacity">$ 25</h2>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large" onclick="document.getElementById('download').style.display='block'"><i class="fa fa-download"></i> Download</button>
+        </li>
+      </ul>
+    </div>
+    <div class="w3-half w3-section">
+      <ul class="w3-ul w3-card w3-hover-shadow">
+        <li class="w3-red w3-xlarge w3-padding-32">Premium</li>
+        <li class="w3-padding-16"><b>1000</b> Photos</li>
+        <li class="w3-padding-16"><b>50</b> Features</li>
+        <li class="w3-padding-16"><b>No</b> Ads</li>
+        <li class="w3-padding-16"><b>Endless</b> Support</li>
+        <li class="w3-padding-16">
+          <h2 class="w3-opacity">$ 99</h2>
+        </li>
+        <li class="w3-light-grey w3-padding-24">
+          <button class="w3-button w3-black w3-padding-large" onclick="document.getElementById('download').style.display='block'"> <i class="fa fa-download"></i> Download</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br>
+</div> -->
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge">
+  <div class="w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Slideshow
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
+
+<!-- </body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!-- <!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css"> 
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/home.css">
+
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5">
+
+
+Page Container
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
+  The Grid
+  <div class="w3-row">
+    Left Column
+    <div class="w3-col m3">
+      Profile
+      <div class="w3-card w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">My Profile</h4>
+         <p class="w3-center"><img src="/w3images/avatar3.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <hr>
+         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Designer, UI</p>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> London, UK</p>
+         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+        </div>
+      </div>
+      <br>
+      
+      Accordion
+      <div class="w3-card w3-round">
+        <div class="w3-white">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <p>Some text..</p>
+          </div>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
+          <div id="Demo2" class="w3-hide w3-container">
+            <p>Some other text..</p>
+          </div>
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
+          <div id="Demo3" class="w3-hide w3-container">
+         <div class="w3-row-padding">
+         <br>
+           <div class="w3-half">
+             <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+           <div class="w3-half">
+             <img src="/w3images/fjords.jpg" style="width:100%" class="w3-margin-bottom">
+           </div>
+         </div>
+          </div>
+        </div>      
+      </div>
+      <br>
+      
+      Interests 
+      <div class="w3-card w3-round w3-white w3-hide-small">
+        <div class="w3-container">
+          <p>Interests</p>
+          <p>
+            <span class="w3-tag w3-small w3-theme-d5">News</span>
+            <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
+            <span class="w3-tag w3-small w3-theme-d3">Labels</span>
+            <span class="w3-tag w3-small w3-theme-d2">Games</span>
+            <span class="w3-tag w3-small w3-theme-d1">Friends</span>
+            <span class="w3-tag w3-small w3-theme">Games</span>
+            <span class="w3-tag w3-small w3-theme-l1">Friends</span>
+            <span class="w3-tag w3-small w3-theme-l2">Food</span>
+            <span class="w3-tag w3-small w3-theme-l3">Design</span>
+            <span class="w3-tag w3-small w3-theme-l4">Art</span>
+            <span class="w3-tag w3-small w3-theme-l5">Photos</span>
+          </p>
+        </div>
+      </div>
+      <br>
+      
+      Alert Box
+      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
+        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
+          <i class="fa fa-remove"></i>
+        </span>
+        <p><strong>Hey!</strong></p>
+        <p>People are looking at your profile. Find out who.</p>
+      </div>
     
-    <!-- Middle Column -->
+    End Left Column
+    </div>
+    
+    Middle Column
   <div class="w3-col m7">
     {{error.message}}
       <div class="w3-row-padding">
@@ -117,7 +477,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
               Status: Title<input type="text" ng-model="blog.blogTitle" class="form-control">
              Status: contents <input type="text" ng-model="blog.blogContent" class="form-control">
                <button type="submit" class="button" ng-click="saveBlog()" ><i class="fa fa-pencil"></i> Post</button> 
-              <!-- <input type="submit" ng-click="saveBlog()"> -->
+              <input type="submit" ng-click="saveBlog()">
             </div>
           </div>
         </div>
@@ -142,7 +502,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
           </div>
         </div>
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <!-- <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom" style="background-color: black"><i class="fa fa-comment"></i>  Comment</button>  -->
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom" style="background-color: black"><i class="fa fa-comment"></i>  Comment</button> 
         <button type="button" class="button" ><i class="fa fa-comment"></i>  Comment</button> 
         <i onclick="myFunction(this)" class="glyphicon glyphicon-thumbs-up" style="font-size:30px;color:blue;"></i>
       </div>
@@ -154,7 +514,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         <hr class="w3-clear">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
-        <!-- <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom" style="background-color: black"><i class="fa fa-comment"></i>  Comment</button>  -->
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom" style="background-color: black"><i class="fa fa-comment"></i>  Comment</button> 
         <button type="button" class="button" ><i class="fa fa-comment"></i>  Comment</button> 
         <i onclick="myFunction(this)" class="glyphicon glyphicon-thumbs-up" style="font-size:30px;color:blue;"></i>
       </div>  
@@ -170,24 +530,24 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
         <button type="button" class="button" ><i class="fa fa-comment"></i>  Comment</button> 
         <i onclick="myFunction(this)" class="glyphicon glyphicon-thumbs-up" style="font-size:30px;color:blue;"></i>
-        <!-- <i class="glyphicon glyphicon-thumbs-up"style="font-size:36px;"></i> -->
-        <!-- <p>Click on the icon to toggle between thumbs-up and thumbs-down (like/dislike):</p>
+        <i class="glyphicon glyphicon-thumbs-up"style="font-size:36px;"></i>
+        <p>Click on the icon to toggle between thumbs-up and thumbs-down (like/dislike):</p>
 
 <i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>
 
 <script>
 function myFunction(x) {
     x.classList.toggle("fa-thumbs-down");
-} -->
+}
 </script>
 
 
 				</div> 
       
-    <!-- End Middle Column -->
+    End Middle Column
     </div>
     
-    <!-- Right Column -->
+    Right Column
     <div class="w3-col m2">
       <div class="w3-card w3-round w3-white w3-center">
         <div class="w3-container">
@@ -226,18 +586,18 @@ function myFunction(x) {
         <p><i class="fa fa-bug w3-xxlarge"></i></p>
       </div>
       
-    <!-- End Right Column -->
+    End Right Column
     
     </div>
     
-  <!-- End Grid -->
+  End Grid
   </div>
   
-<!-- End Page Container -->
+End Page Container
 </div>
 <br>
 
-<!-- Footer -->
+Footer
 <footer class="w3-container w3-theme-d3 w3-padding-16">
   <h5>Footer</h5>
 </footer>
@@ -271,5 +631,6 @@ function openNav() {
 }
 </script>
 
-<!-- </body>
-</html>  -->
+</body>
+</html> 
+ --> 

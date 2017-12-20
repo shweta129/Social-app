@@ -59,6 +59,12 @@ app.config(function($routeProvider){
 		})
 		
 		
+	.when('/getbloglist',{                    //controller to view
+		  templateUrl:'views/blogdetails.html',  //view ng-repeat="p in persons"
+		  controller:'BlogPostController'         //Controller $scope.user
+		
+		})	
+		
 	.when('/admin/getblog/:id',{                    
 	  templateUrl:'views/approvalform.html',  //view ng-repeat="p in persons"
 	  controller:'BlogDetailController'         //Controller $scope.user
@@ -71,13 +77,6 @@ app.config(function($routeProvider){
 	  controller:'BlogDetailController'         //Controller $scope.user
 	
 	})	
-		
-	 
-	/* .when('/addblog',{                   
-		 templateUrl:'views/home.html',  //view ng-repeat="p in persons"
-		  controller:'BlogPostController'        //Controller $scope.user
-	
-	})	*/
 	
 	.otherwise({templateUrl:'views/home.html'})
 	

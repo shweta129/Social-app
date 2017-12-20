@@ -3,6 +3,8 @@ package com.niit.dao;
 import java.util.List;
 
 import com.niit.dto.BlogPost;
+import com.niit.dto.BlogPostLikes;
+import com.niit.dto.User;
 
 public interface BlogPostDao {
 	void saveBlogPost(BlogPost blogPost);
@@ -12,4 +14,5 @@ public interface BlogPostDao {
 	List<BlogPost> getBlogs(int approved);//value= 0 or 1
 	BlogPost getBlogById(int id);
 	void updateBlogPost(BlogPost blogPost,String rejectionReason);
+	//BlogPostLikes userLikes(BlogPost blogPost, User user);
 }

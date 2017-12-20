@@ -1,4 +1,4 @@
-package com.niit.controlles;
+/*package com.niit.controlles;
 
 import java.util.List;
 
@@ -26,8 +26,8 @@ public class RequestController {
 	@Autowired
 	private BlogPostDao blogPostDao;
 	
-	/*@Autowired
-	private EventDAO eventDAO;*/
+	@Autowired
+	private EventDAO eventDAO;
 	
 	@Autowired
 	private JobDao jobDao;
@@ -37,7 +37,7 @@ public class RequestController {
 	
 	
 	
-	/*// method for fetching pending user list by status
+	// method for fetching pending user list by status
 	
 	@RequestMapping(value="/user/request/list",method=RequestMethod.GET)
 	public ResponseEntity<List<User>> fetchPendingUsers()
@@ -47,7 +47,7 @@ public class RequestController {
 		List<User> user = userDao.list("PENDING");
 		
 		return new ResponseEntity<List<User>>(user,HttpStatus.OK);
-	}*/
+	}
 	
 	//  method to change user registration status
 	
@@ -180,3 +180,4 @@ public class RequestController {
 	}
 }
 }
+*/

@@ -1,4 +1,4 @@
-package com.niit.configuration;
+/*package com.niit.configuration;
 
 import java.util.Properties;
 
@@ -37,4 +37,4 @@ public class EmailConfig {
 		
 		return mailProperties;
 	}
-}
+}*/

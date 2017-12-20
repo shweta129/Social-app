@@ -98,7 +98,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
     <button class="w3-button w3-padding-large" title="Job"><i class="fa fa-comments-o" style="font-size:19px;"><b class="fa fa-angle-double-down " style="font-size:17px;"></b></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:45px;"></span></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
       <a href="#/addblog"  class="w3-bar-item w3-button">Add Blog Post</a>
-      <a href="#/getblogs"  class="w3-bar-item w3-button">Get All Blogs</a>
+      <!-- <a  href="#/getblogs" ng-show="currentUser.role=='ADMIN'" class="w3-bar-item w3-button">Get All Blogs</a> -->
+      <a href="#/getblogs"  class="w3-bar-item w3-button">Blogs List</a>
      
     </div>
   </div>
@@ -132,7 +133,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
    
    <!-- Sidebar/menu -->
    <br><br>
-<div class="w3-sidebar w3-bar-block w3-black w3-animate-right  w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;font-size:17px;" id="mySidebar">
+<div  ng-show="currentUser.username"  class="w3-sidebar w3-bar-block w3-black w3-animate-right  w3-text-light-grey w3-large" style="z-index:3;width:250px;font-weight:bold;display:none;right:0;font-size:17px;" id="mySidebar">
  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a> 
   <li href="#"  class="w3-bar-item w3-button w3-center w3-padding-16">Friends</li> 
      <!-- --------seach bar------- -->

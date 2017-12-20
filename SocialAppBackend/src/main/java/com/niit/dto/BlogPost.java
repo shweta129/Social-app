@@ -15,13 +15,14 @@ public class BlogPost {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
-	@Column(unique=true)
+	@Column(unique=true,nullable=false)
 	private String blogTitle;
 	@Lob
 	private String blogContent;
 	private Date postedOn;
 	@ManyToOne
 	private User postedBy;
+	
 	private boolean approved;
 	private int likes;
 	
