@@ -38,5 +38,8 @@ app.factory('BlogService',function($http){
 	return $http.put(BASE_URL +"/updatelikes",blogPost)	
 	}
 	
+	
+	
+	
 	return blogService;
 })

@@ -1,4 +1,6 @@
- <h2>Approval BlogPost</h2>
+<!-- 
+<br><br>
+ <center>Approval BlogPost</center>
 <div class="row">
 <div>
 <div class="panel panel-default">
@@ -11,21 +13,21 @@
 <div class="panel-body">
 {{blogPost.blogContent}}
 </div>
-<b> likes</b>{{blogPost.likes}}
+<center><b> likes</b>{{blogPost.likes}}
 
-          <div ng-show="liked">
-          <button class="w3-button w3-white w3-border"><b><i class="fa fa-thumbs-up" style="color:blue" ng-click="updateLikes()"></i></b></button>
+         <div ng-show="liked">
+          <span class="glyphicon glyphicon-thumbs-up" style="color:blue" ng-click="updateLikes()"></span>
           </div>
           <div ng-show="!liked">
-          <button class="w3-button w3-white w3-border"><b><i class="fa fa-thumbs-up" style="color:black" ng-click="updateLikes()"></i></b></button>
-          </div>
+          <span class="glyphicon glyphicon-thumbs-up" style="color:black" ng-click="updateLikes()"> </span>
+          </div></center>
 <a></a>
 <br>
 </div>
 </div>
 </div>
-Blog Comments 
-<!-- <link rel="stylesheet" href="css/home.css">
+Blog Comments  -->
+<!--  <link rel="stylesheet" href="css/home.css">
 <br><br><br><br>
 <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
         <img src="/w3images/avatar5.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
@@ -37,14 +39,13 @@ Blog Comments
         <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom" style="background-color: black"><i class="fa fa-comment"></i>  Comment</button> 
         <button type="button" class="button" ><i class="fa fa-comment"></i>  Comment</button> 
         <i onclick="myFunction(this)" class="glyphicon glyphicon-thumbs-up" style="font-size:30px;color:blue;">{{blogPost.likes}}</i>
-      </div> -->
+      </div>  -->
       
       
       
       
       
-      
-     <!--  <!DOCTYPE html>
+   <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
@@ -59,8 +60,8 @@ body {font-family: "Open Sans"}
 </style>
 <body class="w3-light-grey">
 
-Navigation bar with social media icons
-<div class="w3-bar w3-black w3-hide-small">
+<!-- Navigation bar with social media icons -->
+<!-- <div class="w3-bar w3-black w3-hide-small">
   <a href="#" class="w3-bar-item w3-button"><i class="fa fa-facebook-official"></i></a>
   <a href="#" class="w3-bar-item w3-button"><i class="fa fa-instagram"></i></a>
   <a href="#" class="w3-bar-item w3-button"><i class="fa fa-snapchat"></i></a>
@@ -68,11 +69,11 @@ Navigation bar with social media icons
   <a href="#" class="w3-bar-item w3-button"><i class="fa fa-twitter"></i></a>
   <a href="#" class="w3-bar-item w3-button"><i class="fa fa-linkedin"></i></a>
   <a href="#" class="w3-bar-item w3-button w3-right"><i class="fa fa-search"></i></a>
-</div>
+</div> -->
   
-w3-content defines a container for fixed size centered content, 
-and is wrapped around the whole page content, except for the footer in this example
-<div class="w3-content" style="max-width:1600px">
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<!-- <div class="w3-content" style="max-width:1600px">
 
   Header
   <header class="w3-container w3-center w3-padding-48 w3-white">
@@ -82,39 +83,63 @@ and is wrapped around the whole page content, except for the footer in this exam
 
   Image header
   <header class="w3-display-container w3-wide" id="home">
-    <img class="w3-image" src="images/H1.png" alt="Fashion Blog" width="1600" height="1060">
-    <img src="images/logo.jpg" alt="logo" style="width:70px;">
+    <img class="w3-image" src="images/H3.jpg" alt="Fashion Blog" width="1600" height="1060">
+    <img src="images/H4.jpg" alt="logo" style="width:70px;">
     <div class="w3-display-left w3-padding-large">
       <h1 class="w3-text-white">Jane's</h1>
       <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>Want's to Add A Blog</b></h1>
       <h6><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">ADD</button></h6>
       <h6><a href="#/blogform.html" class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" >ADD</a></h6>
     </div>
+  </header> -->
+
+
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-48 w3-white">
+    <h1 class="w3-xxxlarge"><b>JANE BLOGLIFE</b></h1>
+    <h6>Welcome to the blog of <span class="w3-tag">Jane's world</span></h6>
   </header>
 
-  Grid
-  <div class="w3-row w3-padding w3-border">
+  <!-- Image header -->
+  <header class="w3-display-container w3-wide" id="home">
+    <img class="w3-image" src="images/blog6.png" alt="Fashion Blog" width="1600" height="1060">
+    <div class="w3-display-left w3-padding-large">
+      <h1 class="w3-text-white">Jane's</h1>
+     <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>Want's to Add A Blog</b></h1>
+      <h6><button class="w3-button w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">ADD</button></h6>
+      
+    </div>
+  </header>
+
+
+  <!-- Grid -->
+<!--   <div class="w3-row w3-padding w3-border">
 
     Blog entries
-    <div class="w3-col l8 s12">
+    <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+    <div class="w3-col l20 s20">
     
       Blog entry
       <div class="w3-container w3-white w3-margin w3-padding-large">
         <div class="w3-center">
-          <h3>{{blogPost.postedBy.firstname}}</h3><br>
-          <h4>{{blogPost.blogTitle}}</h4>
-          <h5>Title description, <span class="w3-opacity">{{blogPost.postedOn | date:'medium'}}</span></h5>
+          <h3>This is ,{{blogPost.postedBy.firstname}}</h3>
+          <h5>{{blogPost.blogTitle}}, <span class="w3-opacity">{{blogPost.postedOn | date:'medium'}}</span></h5>
         </div>
 
         <div class="w3-justify">
-          <img src="images/H1.jpg" alt="Girl Hat" style="width:100%" class="w3-padding-16">
+          <center><img src="images/H1.jpg" alt="Girl Hat"  width="1000" height="500" class="w3-padding-16"></center>
           <p><strong>{{blogPost.blogContent}}</strong></p>
           <p class="w3-left"> {{blogPost.likes}}</p>
           <div ng-show="liked">
-          <button class="w3-button w3-white w3-border"><b><i class="fa fa-thumbs-up" style="color:blue" ng-click="updateLikes()"></i></b></button>
+          <span class="glyphicon glyphicon-thumbs-up" style="color:blue; width:15; height:15;" ng-click="updateLikes()"></span>
           </div>
           <div ng-show="!liked">
-          <button class="w3-button w3-white w3-border"><b><i class="fa fa-thumbs-up" style="color:black" ng-click="updateLikes()"></i></b></button>
+          <span class="glyphicon glyphicon-thumbs-up" style="color:black width:15; height:15;" ng-click="updateLikes()"> </span>
           </div>
           <p class="w3-right"><button class="w3-button w3-black"  id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white">1</span></button></p>
           <p class="w3-clear"></p>
@@ -130,13 +155,77 @@ and is wrapped around the whole page content, except for the footer in this exam
           </div>
         </div>
       </div>
-      <hr>
+      <hr> -->
 
     
           
           
+          
+          
+          
+     <!--      
+          <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+       <div class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>This is ,{{blogPost.postedBy.firstname}}</h3>
+          <h5>{{blogPost.blogTitle}}, <span class="w3-opacity">{{blogPost.postedOn | date:'medium'}}</span></h5>
+        </div>
+            <div class="w3-justify">
+          <center><img src="images/H1.jpg" alt="Girl Hat"  width="1000" height="500" class="w3-padding-16"></center>
+          <p><strong>{{blogPost.blogContent}}</strong></p>
+          </div>
+          </div>
+          
+  
+        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom" style="background-color: black"><i class="fa fa-comment"></i>  Comment</button> 
+        <button type="button" class="button" ><i class="fa fa-comment"></i>  Comment</button> 
+        <i onclick="myFunction(this)" class="glyphicon glyphicon-thumbs-up" style="font-size:30px;color:blue;">{{blogPost.likes}}</i>
+      </div>  -->
+          
+          
+          
+          
+          
+          <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+          <div class="w3-center">
+          <h3>This is ,{{blogPost.postedBy.firstname}}</h3>
+          <h5>{{blogPost.blogTitle}}, <span class="w3-opacity">{{blogPost.postedOn | date:'medium'}}</span></h5>
+        </div>
+        <center><img src="images/H1.jpg" alt="Girl Hat"  width="1000" height="500" class="w3-padding-16"></center>
+       
+        <hr class="w3-clear">
+        <p>{{blogPost.blogContent}}</p>
+       
+       
+        <b> likes</b>{{blogPost.likes}}
+        <div ng-show="liked">
+          <span class="glyphicon glyphicon-thumbs-up" style="color:blue; font-size:30px;" ng-click="updateLikes()"></span>
+          </div>
+          <div ng-show="!liked">
+          <span class="glyphicon glyphicon-thumbs-up" style="color:black;font-size:30px;" ng-click="updateLikes()"> </span>
+          </div>
+         <button class="w3-button w3-black"  id="myBtn"><b>Replies  </b> <span class="w3-tag w3-white"></span></button>
+          
+      </div>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
       
-    END BLOG ENTRIES
+    <!-- END BLOG ENTRIES -->
     </div>
 
    

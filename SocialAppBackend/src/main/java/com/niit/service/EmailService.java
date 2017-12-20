@@ -1,4 +1,4 @@
-package com.niit.service;
+/*package com.niit.service;
 
 import javax.mail.internet.MimeMessage;
 
@@ -22,13 +22,13 @@ public class EmailService {
 	// email name which is not similar to the user name
 	private static String from = "sbkChat";
 	
-	/**
+	*//**
 	 *  approvedUserMessage method will be called using emailService that can be Autowired
 	 *  in the AdminController once the user is approved by admin with the given role
 	 *  args-User
 	 *  requires the user object to fetch the email and other content of the user to send the email
 	 *  Similarly we can create other methods for different purposes
-	 */
+	 *//*
 	
 	public void approvedUserMessage(User user)
 	{
@@ -67,4 +67,4 @@ public class EmailService {
 			
 		
 	}
-}
+}*/

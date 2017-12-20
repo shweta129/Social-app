@@ -16,7 +16,7 @@ app.controller('BlogDetailController', function($scope, $location, $routeParams,
 	})
 	
 	//select * from blogpostlikes where blogpost_id=? nd user_username=?
-	BlogService.userLikes($scope.blogPost).then(function(response){
+	BlogService.userLikes(id).then(function(response){
 		if(response.data=='')//user has not yet like the post
 			$scope.liked=false
 			else
