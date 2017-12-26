@@ -56,6 +56,8 @@
     <version>${spring.version}</version>
 </dependency>
     
+    
+    
   </dependencies>
   <build>
     <finalName>SocialAppMRest</finalName>

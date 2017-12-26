@@ -1,4 +1,4 @@
-package com.niit.controlles;
+/*package com.niit.controlles;
 
 import java.util.List;
 
@@ -90,3 +90,4 @@ public class PersonController {
 	}
 	
 }
+*/

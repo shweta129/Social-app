@@ -78,7 +78,15 @@ app.config(function($routeProvider){
 	
 	})	
 	
-	.otherwise({templateUrl:'views/home.html'})
+	.when('/home',{                   
+	  templateUrl:'views/home.html',  //view ng-repeat="p in persons"
+	          
+	
+	})	
+	
+	.otherwise('/login',{
+	  templateUrl:'views/loginForm.html',     //view ng-repeat="p in persons"
+	  controller:'UserController'   })
 	
 })
 

@@ -5,7 +5,8 @@
 app.controller('BlogDetailController', function($scope, $location, $routeParams, BlogService) {
 
 	var id = $routeParams.id
-
+    $scope.showComment=false;
+	
 	BlogService.getBlogPost(id).then(function(response) {
 		$scope.blogPost = response.data
 	}, function(response) {
@@ -63,5 +64,29 @@ app.controller('BlogDetailController', function($scope, $location, $routeParams,
 	}
 	
 	
+	
+	
+	$scope.addComment=function()
+	   {
+		if($scope.commentText==undefined){
+			alert('Please enter comment')
+		}
+		else
+		 BlogService.addComment($scope.commentText,id).then(function(response){
+			alert(response.status)
+			$scope.commentText=''//empty string for list comment in order (one by one)
+			$scope.blogPost=response.data//BlogPost with list of blogcomment
+		},function(ressponse){
+			if(response.status==401){
+				$location.path('/login')
+			}
+			if(response.status==500){
+				$scope.error=response.data
+			}
+		})
+	}
 
+	$scope.showComments=function(){
+		$scope.showComment=!$scope.showComment
+	}
 })

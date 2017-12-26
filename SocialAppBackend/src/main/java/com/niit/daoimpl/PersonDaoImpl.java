@@ -1,4 +1,4 @@
-package com.niit.daoimpl;
+/*package com.niit.daoimpl;
 
 import java.util.List;
 
@@ -60,3 +60,4 @@ public class PersonDaoImpl implements PersonDao {
 	
 	
 
+*/

@@ -2,6 +2,7 @@ package com.niit.dao;
 
 import java.util.List;
 
+import com.niit.dto.BlogComment;
 import com.niit.dto.BlogPost;
 import com.niit.dto.BlogPostLikes;
 import com.niit.dto.User;
@@ -15,4 +16,5 @@ public interface BlogPostDao {
 	BlogPost getBlogById(int id);
 	void updateBlogPost(BlogPost blogPost,String rejectionReason);
 	//BlogPostLikes userLikes(BlogPost blogPost, User user);
+	void addComment(BlogComment blogComment);
 }

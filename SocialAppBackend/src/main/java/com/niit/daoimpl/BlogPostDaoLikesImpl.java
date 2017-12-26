@@ -21,12 +21,13 @@ public class BlogPostDaoLikesImpl implements BlogPostLikesDao {
 
 		public BlogPostLikes userLikedPost(BlogPost blogPost, User user) {
 			Session session=sessionFactory.getCurrentSession();
-			@SuppressWarnings("deprecation")
+			//select *from blogpostlikes where blogpost_id=? and user_username=?
 			Query query=session.createQuery("from BlogPostLikes where blogPost.id=? and user.username=?");
 			 System.out.println("BlogPost id"+blogPost.getId());
-			 System.out.println("Username"+blogPost.getId());
+			 System.out.println("Username"+user.getUsername());
 			 query.setInteger(0,blogPost.getId());
 			 query.setString(1,user.getUsername());
+			 //blogPostlikes=null [glyphicon in black color] / 1[glyphicon in blue color] object
 			 BlogPostLikes blogPostLikes=(BlogPostLikes)query.uniqueResult();
 			 System.out.println(blogPostLikes);
 			return blogPostLikes;

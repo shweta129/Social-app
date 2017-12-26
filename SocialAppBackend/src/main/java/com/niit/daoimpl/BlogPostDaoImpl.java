@@ -10,10 +10,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.BlogPostDao;
+import com.niit.dto.BlogComment;
 import com.niit.dto.BlogPost;
 import com.niit.dto.Notification;
 
-@Repository
+@Repository("blogPostDao")
 @Transactional
 public class BlogPostDaoImpl implements BlogPostDao {
 
@@ -60,6 +61,12 @@ public class BlogPostDaoImpl implements BlogPostDao {
 			session.delete(blogPost);//delete from blogpost where id =?
 			//insert the details in notifications table.[username,approvalstatus,rejecttionreason,blogposttitle]
 		}
+		
+	}
+
+	public void addComment(BlogComment blogComment) {
+		Session session=sessionFactory.getCurrentSession();
+		session.save(blogComment);//insert into blogcomment
 		
 	}
 
