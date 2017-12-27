@@ -80,7 +80,7 @@ app.config(function($routeProvider){
 	
 	.when('/home',{                   
 	  templateUrl:'views/home.html',  //view ng-repeat="p in persons"
-	          
+	   controller:'HomeController'       
 	
 	})	
 	

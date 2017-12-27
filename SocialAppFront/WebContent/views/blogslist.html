@@ -1,9 +1,10 @@
 <br><br><br><br>
+
 <div ng-show="currentUser.role=='ADMIN'">
 	<h3>List of Blogs waiting for approval</h3>
 	<div ng-if="blogsWaitingForApproval.length==0">No Approved blogposts available</div>
     <table ng-show="blogsWaitingForApproval.length>0" class="table table-striped">
-		<thead>
+		<thead class="blue-grey lighten-4">
 			<tr>
 				<td>Blog Title</td>
 				<td>Author</td>
@@ -23,8 +24,8 @@
 	 <div>
 		<h3>List of blogs approved</h3>
 		<div ng-if="blogsApproved.length==0">No Approved blogposts available</div>
-		<table ng-show="blogsApproved.length>0" class="table table-striped">
-			<thead>
+		<table ng-show="blogsApproved.length>0" >
+			<thead class="bg-primary">
 				<tr>
 					<td>Blog Title</td>
 					<td>Author</td>

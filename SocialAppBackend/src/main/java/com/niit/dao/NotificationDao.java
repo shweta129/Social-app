@@ -8,4 +8,6 @@ public interface NotificationDao {
 //select * from notification where username="sandy" and viewd=o
 	//list of notification not yet viewd by sandy
 	List<Notification> getNotification(String username,int viewed);
+
+	Notification updateNotification(int notificationId);
 }
