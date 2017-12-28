@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.niit.dao.BlogPostDao;
 import com.niit.dto.BlogComment;
 import com.niit.dto.BlogPost;
+import com.niit.dto.CommentNotification;
 import com.niit.dto.Notification;
 
 @Repository("blogPostDao")
@@ -66,6 +67,13 @@ public class BlogPostDaoImpl implements BlogPostDao {
 
 	public void addComment(BlogComment blogComment) {
 		Session session=sessionFactory.getCurrentSession();
+		//insert into comment-notification
+	     CommentNotification commentnotify=new CommentNotification();
+	     commentnotify.setBlogTitle(blogComment.getBlogPost().getBlogTitle());
+	     commentnotify.setCommentedBy(blogComment.getCommentedBy());
+	     commentnotify.setUsername(blogComment.getBlogPost().getPostedBy().getUsername());
+	     session.save(commentnotify);  
+	     
 		session.save(blogComment);//insert into blogcomment
 		
 	}

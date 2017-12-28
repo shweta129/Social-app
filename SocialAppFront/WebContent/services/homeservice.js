@@ -18,22 +18,8 @@ app.factory('HomeService',function($http){
 		return $http.put(BASE_URL + "/updatenotification/"+notificationId)
 	}
 	
-/*	homeService.getNotificationNotViewedJob=function()
-	{
-		//select * from notification where username=? and viewed=0
-		return $http.get(BASE_URL + "/getnotificationjob/"+ 0);
-	}
+
 	
-	homeService.getNotificationViewedJob=function()
-	{
-		//select * from notification where username=? and viewed=1
-		return $http.get(BASE_URL + "/getnotificationjob/"+ 1);
-	}*/
-	
-	/*homeService.updateNotificationJob=function(notificationId)
-	{
-		return $http.put(BASE_URL + "/updatenotificationjob/"+notificationId);
-	}
 	
 	homeService.getNotificationNotViewedLike=function()
 	{
@@ -52,6 +38,10 @@ app.factory('HomeService',function($http){
 		return $http.put(BASE_URL + "/updatenotificationlike/"+notificationId);
 	}
 	
+	
+	
+	
+	
 	homeService.getNotificationNotViewedComment=function()
 	{
 		//select * from notification where username=? and viewed=0
@@ -67,7 +57,7 @@ app.factory('HomeService',function($http){
 	homeService.updateNotificationComment=function(notificationId)
 	{
 		return $http.put(BASE_URL + "/updatenotificationcomment/"+notificationId);
-	}*/
+	}
 	
 	return homeService;
 })

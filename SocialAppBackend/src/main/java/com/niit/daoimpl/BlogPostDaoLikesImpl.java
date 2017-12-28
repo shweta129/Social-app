@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.niit.dao.BlogPostLikesDao;
 import com.niit.dto.BlogPost;
 import com.niit.dto.BlogPostLikes;
+import com.niit.dto.LikeNotification;
 import com.niit.dto.User;
 @Repository
 @Transactional
@@ -36,6 +37,7 @@ public class BlogPostDaoLikesImpl implements BlogPostLikesDao {
 		public BlogPost updateLikes(BlogPost blogPost, User user) {
 			Session session=sessionFactory.getCurrentSession();
 			BlogPostLikes blogPostLikes=userLikedPost(blogPost, user);
+			
 			//insert and increment /delete and decrement.
 			//like
 			if(blogPostLikes==null){//insert into blogpostlikes,increment blogpost.likes
@@ -44,6 +46,14 @@ public class BlogPostDaoLikesImpl implements BlogPostLikesDao {
 				insertLikes.setUser(user);//FK user_username
 				session.save(insertLikes);//insert into blogpostlikes
 				blogPost.setLikes(blogPost.getLikes() + 1);//increment the number of likes.
+				
+				//when the likes are increements as per that likes notification increements for the perticular user
+				LikeNotification likeNotification=new LikeNotification();
+				likeNotification.setLikedBy(user);//user who like the post
+				likeNotification.setBlogTitle(blogPost.getBlogTitle());//post which user like
+				likeNotification.setUsername(blogPost.getPostedBy().getUsername());//user who postec blog
+				likeNotification.setViewedlikes(false);
+				session.save(likeNotification);
 				session.update(blogPost);//update blogpost set likes=.. where id=?			
 			}
 			else //unlike
