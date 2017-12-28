@@ -84,6 +84,12 @@ app.config(function($routeProvider){
 	
 	})	
 	
+	.when('/uploadpic',{                   
+	  templateUrl:'views/profilepicture.html',  //view ng-repeat="p in persons"
+	   controller:'HomeController'       
+	
+	})	
+	
 	.otherwise('/login',{
 	  templateUrl:'views/loginForm.html',     //view ng-repeat="p in persons"
 	  controller:'UserController'   })

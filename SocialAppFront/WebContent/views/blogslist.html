@@ -1,10 +1,17 @@
 <br><br><br><br>
+<style>
 
+</style>
+ <link rel="stylesheet" href="css/blogtable.css">
+</style>
 <div ng-show="currentUser.role=='ADMIN'">
-	<h3>List of Blogs waiting for approval</h3>
+<marquee"><img src="http://www.Fillster.com/btr.gif" /></marquee>
+ <marquee behavior="alternate"><h2 style="color: #fd0505;">Waiting For Approval</h2></marquee>
+  
+	<!-- <h3>List of Blogs waiting for approval</h3> -->
 	<div ng-if="blogsWaitingForApproval.length==0">No Approved blogposts available</div>
     <table ng-show="blogsWaitingForApproval.length>0" class="table table-striped">
-		<thead class="blue-grey lighten-4">
+		<thead class="bg-primary" style="color: #0ebcbd;">
 			<tr>
 				<td>Blog Title</td>
 				<td>Author</td>
@@ -22,9 +29,11 @@
 
 </div>
 	 <div>
-		<h3>List of blogs approved</h3>
+	 <marquee behavior="alternate"><h3 style="color: #19d7e2;">List of Blogs</h3></marquee>
+	   <!-- <marquee loop="5"><h2>List of Blogs</h2></marquee> -->
+		<!-- <h3>List of blogs approved</h3> -->
 		<div ng-if="blogsApproved.length==0">No Approved blogposts available</div>
-		<table ng-show="blogsApproved.length>0" >
+		<table ng-show="blogsApproved.length>0" class="table table-striped">
 			<thead class="bg-primary">
 				<tr>
 					<td>Blog Title</td>
