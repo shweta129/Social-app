@@ -303,23 +303,27 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
    
    
   
-  <!-- <a href="#/uploadpic" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="Edit User Profile">
-  <img src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}" alt="Uplood Profile Pic"  height="30" width="40" ></a>  -->
+  
   
   
   <a  href="javascript:void(0)" class="w3-right w3-button w3-hover-white w3-hide-small w3-padding-large" onclick="w3_open() "><span class="glyphicon glyphicon-th-list" style="font-size:19px;"></span></a>
   <!-- <a href="#" ng-show="currentUser.username"  class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"><img src="/w3images/avatar2.png" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a> -->
   <a  href="#" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><img src="images/logo.jp" alt="logo" style="width:50px;"></a>
-  <!-- Profile pic -->
+  
   <a href=""  ng-show="currentUser.username" ng-click="logout()" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log out"><i class="fa fa-power-off" style="font-size:19px;"></i></a>
-  <a href="#/uploadpic" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="Edit User Profile">
-  <img src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}" alt="Uplood Profile Pic"  height="30" width="40" ></a> 
-  <!-- end -->
+  
   
   <a href="#/register" ng-hide="currentUser.username"  class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="User registration">sign up</a>
   <a href="#/login" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log in">sign in</a>
 <!--   <a href=""  ng-show="currentUser.username" ng-click="logout()" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log out"><i class="fa fa-power-off" style="font-size:19px;"></i></a> -->
   <div ng-show="currentUser.username" class=" w3-right w3-padding-large"> Welcome {{currentUser.username}}</div> 
+   
+   <!-- profile  -->
+   <a href="#/uploadpic" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="Edit User Profile">
+  <img src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/H2.png'" class="img-responsive img-circle" height="30" width="40" ></a> 
+  <!-- end -->
+   
+   
    
     <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-center w3-hover-white">
     <button class="w3-button w3-padding-large" title="Job"><i class="fa fa-graduation-cap " style="font-size:17px;"><b class="fa fa-angle-double-down " style="font-size:18px;"></b></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:45px;"></span></button>     
