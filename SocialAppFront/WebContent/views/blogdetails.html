@@ -11,11 +11,11 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/comment.css">
+		<link rel="stylesheet" href="css/blogdetail.css">
 <style>
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Oswald"
 }
-
 body {
 	font-family: "Open Sans"
 }
@@ -34,10 +34,12 @@ and is wrapped around the whole page content, except for the footer in this exam
 			<h1 class="w3-xxxlarge">
 				<b>JANE BLOGLIFE</b>
 			</h1>
-			<h6>
-				Welcome to the blog of <span class="w3-tag">Jane's world</span>
-	       </h6><br>
-	      <h6> <marquee scrollamount="5" width="40">&lt;&lt;&lt;</marquee> <a href="#/addblog"  class="w3-bar-item w3-button"><b></strong>Click me to Add Blog</b></a><marquee scrollamount="5" direction="right" width="40">&gt;&gt;&gt;</marquee></h6>
+			<h4>
+			<marquee scrollamount="10" style="color: #fb0808!important;">Welcome to the blog of <span class="w3-tag">Jane's world</span></marquee>
+			
+				
+	       </h4><br>
+	      <h4> <marquee scrollamount="5" width="40"style="color: #fb0808!important;">&lt;&lt;&lt;</marquee> <a href="#/addblog"  class="w3-bar-item w3-button"><b></strong>Click me to Add Blog</b></a><marquee scrollamount="5" direction="right" width="40" style="color: #fb0808!important;">&gt;&gt;&gt;</marquee></h4>
 		</header>
 
 	
@@ -74,29 +76,28 @@ and is wrapped around the whole page content, except for the footer in this exam
 			<div>
 				<textarea rows="2" cols="150" ng-model="commentText"></textarea>
 				<br>
-
 				Inser data into blogvomment value (?,blogpostid,username,commenttext,commentedon)
 				<input type="submit" ng-click="addComment()" value="POST COMMENT">
 			</div> -->
 			
 			
 			
-			<a href="" ng-click="showComments()"><h3 class="text-success">Comments{{blogPost.blogComments.length}}</h3></a>
+			<button class="button"><a href="" ng-click="showComments()"><h3 class="text-success">Comments{{blogPost.blogComments.length}}</h3></a></button><br><br><br>
 				<ul class="comments" ng-show="showComment" style="list-style: none">
 				
 				<div class="post-comments " ng-repeat="comment in blogPost.blogComments | orderBy:'commentedOn'">
 				<div class="w3-col m7">
-   
-      <div class="w3-row-padding">
-        <div class="w3-col m12">
-          <div class="w3-card w3-round w3-white">
-            <div class="w3-container w3-padding">
-				<p class="meta"><a href="#"><strong>{{comment.commentedBy.username}}</strong></a> says : <i class="pull-right"><a href="#"><small>{{comment.commentedOn | date: 'medium'}}</small></a></i></p>
-				      <p>
+   <br>
+     <div class="panel panel-default">
+      <div class="panel-heading"><p class="meta"><a href="#" style="color: #7d18b1;"><strong> {{comment.commentedBy.username}}</strong></a> says : <i class="pull-right"><a href="#" style="color: #7d18b1;"><strong>{{comment.commentedOn | date: 'medium'}}</strong></a></i></p></div>
+      <div class="panel-body"> <p>
 				         {{comment.commentText}}
-				      </p>
-				  </div><br>
-				</div><br></div></div></div></div>
+		
+				  </div>
+				  </div>
+				  
+				  
+				  </div></div>
 				
 					<div>
 				<textarea rows="2" cols="150" ng-model="commentText"></textarea>
@@ -134,7 +135,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 				</li> -->
 
 
-
+<br><br><br>
 
 
 		<!-- END BLOG ENTRIES -->
@@ -150,7 +151,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="panel panel-default">
 <div class="panel-heading">
 <b>{{blogPost.blogTitle}}</b><br>
-
 <b>Created By:</b>{{blogPost.postedBy.firstname}}<br>
 <b>Created On:</b>{{blogPost.postedOn | date:'medium'}}
 </div>
@@ -158,7 +158,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 {{blogPost.blogContent}}
 </div>
 <center><b> likes</b>{{blogPost.likes}}
-
          <div ng-show="liked">
           <span class="glyphicon glyphicon-thumbs-up" style="color:blue" ng-click="updateLikes()"></span>
           </div>

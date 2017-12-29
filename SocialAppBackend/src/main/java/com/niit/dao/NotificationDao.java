@@ -16,7 +16,7 @@ public interface NotificationDao {
 	public List<LikeNotification> getNotificationLike(String username,int viewedlike);
 	LikeNotification updateNotificationLike(int notificationId);
 	
-	//notification for user like post
+	//notification for user comment post
 		public List<CommentNotification> getNotificationComment(String username,int viewedcomment);
 		CommentNotification updateNotificationComment(int notificationId);
 	

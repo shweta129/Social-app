@@ -113,7 +113,7 @@ app.controller('HomeController',function($rootScope,$location,HomeService){
 		
 	}
 		
-		$rootScope.updateNotificationComment=function(notificationId)
+	$rootScope.updateNotificationComment=function(notificationId)
 	{
 		HomeService.updateNotificationComment(notificationId).then(function(response){
 			getNotification()

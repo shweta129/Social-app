@@ -1,4 +1,3 @@
-
 <!-- <html>
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
@@ -24,17 +23,17 @@ img {margin-bottom: -8px;}
   </div> 
   <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button>
   <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="images/H2.jpg" alt="Image 1" style="min-width:400px min-height:200px;" width="1500" height="100">
+    <img class="w3-image" src="images/H5.jpg" alt="Image 1" style=" width:1500; height:100" >
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
     
     </div>
   </div>
   <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="images/H4.jpg" alt="Image 2" style="min-width:400px; min-height:200px;" width="1500" height="100" >
+    <img class="w3-image" src="images/H4.jpg" alt="Image 2" style=" width:1500; height:100" >
   
   </div>
   <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="images/H5.jpg" alt="Image 3" style="min-width:400px min-height:200px;" width="1500" height="100">
+    <img class="w3-image" src="images/H5.jpg" alt="Image 3" style=" width:1500; height:100" >
     
   </div>
   <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
@@ -43,6 +42,22 @@ img {margin-bottom: -8px;}
 <marquee bgcolor="#66CD00" style="height:50px" ><b><br>Changing bgcolor value changes marquee background color</b></marquee>
  
  
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
 
    
 
@@ -301,11 +316,9 @@ img {margin-bottom: -8px;}
 // Slideshow
 var slideIndex = 1;
 showDivs(slideIndex);
-
 function plusDivs(n) {
   showDivs(slideIndex += n);
 }
-
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");

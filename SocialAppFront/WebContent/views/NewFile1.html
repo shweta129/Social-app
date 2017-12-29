@@ -1,86 +1,236 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none;}
+</style>
 <body>
-<!--Table-->
-<table class="table">
 
-    <!--Table head-->
-    <thead class="thead-dark">
-        <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-        </tr>
-    </thead>
-    <!--Table head-->
+<h2 class="w3-center">HTML slides</h2>
 
-    <!--Table body-->
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-    <!--Table body-->
-</table>
-<!--Table-->
+<div class="w3-content" style="max-width:400px">
+  <div class="mySlides w3-container w3-red">
+    <h1><b>Did You Know?</b></h1>
+    <h1><i>We plan to sell trips to the moon in the 2020s</i></h1>
+  </div>
 
-<!--Table-->
-<table class="table">
+  <img class="mySlides" src="images/H4.jpg" style="width:100%">
 
-    <!--Table head-->
-    <thead class="mdb-color darken-3">
-        <tr class="text-white">
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-        </tr>
-    </thead>
-    <!--Table head-->
+  <div class="mySlides w3-container w3-xlarge w3-white w3-card-4">
+    <p><span class="w3-tag w3-yellow">New!</span>
+    <p>6 Crystal Glasses</p>
+    <p>Only $99 !!!</p>
+  </div>
+<img class="mySlides" src="images/H4.jpg" style="width:100%">
+</div>
 
-    <!--Table body-->
-    <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
-    </tbody>
-    <!--Table body-->
-</table>
-<!--Table-->
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 2000); 
+}
+</script>
+
 </body>
 </html>
+<!-- ---------- -->
+
+
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/comment.css">
+	<link rel="stylesheet" href="css/blogdetail.css">
+
+<body class="w3-light-grey">
+
+	
+
+
+	<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+	<div class="w3-content" style="max-width: 1600px">
+
+		<!-- Header -->
+		<header class="w3-container w3-center w3-padding-48 w3-white">
+			<h1 class="w3-xxxlarge">
+				<b>JANE BLOGLIFE</b>
+			</h1>
+			<h4>
+			<marquee scrollamount="10" style="color: #fb0808!important;">Welcome to the blog of <span class="w3-tag">Jane's world</span></marquee>
+			
+				
+	       </h4><br>
+	      <h4> <marquee scrollamount="5" width="40"style="color: #fb0808!important;">&lt;&lt;&lt;</marquee> <a href="#/addblog"  class="w3-bar-item w3-button"><b></strong>Click me to Add Blog</b></a><marquee scrollamount="5" direction="right" width="40" style="color: #fb0808!important;">&gt;&gt;&gt;</marquee></h4>
+		</header>
+
+	
+		<div class="w3-container w3-card w3-white w3-round w3-margin ">
+			
+			<div class="w3-center">
+				<h3>This is ,{{blogPost.postedBy.firstname}}</h3>
+				<h5>
+					{{blogPost.blogTitle}}, <span class="w3-opacity">{{blogPost.postedOn
+						| date:'medium'}}</span>
+				</h5>
+			</div>
+			<center>
+				<img src="images/H1.jpg" alt="Girl Hat" width="1000" height="500"
+					class="w3-padding-16">
+			</center>
+
+			<hr class="w3-clear">
+			<!-- <p>{{blogPost.blogContent}}</p> -->
+			
+					      
+				        <div class="panel panel-default">
+    <div class="panel-body"><p>{{blogPost.blogContent}}</p></div>
+  </div>
+
+
+			<b> likes</b>{{blogPost.likes}}
+			<p class="w3-left">
+			<div ng-show="liked">
+				<span class="glyphicon glyphicon-thumbs-up"
+					style="color: blue; font-size: 30px;" ng-click="updateLikes()"></span>
+			</div>
+			<div ng-show="!liked">
+				<span class="glyphicon glyphicon-thumbs-up"
+					style="color: black; font-size: 30px;" ng-click="updateLikes()">
+				</span>
+				
+			</div>
+</p>
+				
+
+			<!-- <h3 class="text-success">Comments</h3>
+			<div>
+				<textarea rows="2" cols="150" ng-model="commentText"></textarea>
+				<br>
+
+				Inser data into blogvomment value (?,blogpostid,username,commenttext,commentedon)
+				<input type="submit" ng-click="addComment()" value="POST COMMENT">
+			</div> -->
+			
+			
+			
+			<button class="button"><a href="" ng-click="showComments()"><h3 style="color:#4e2bb3;">Comments{{blogPost.blogComments.length}}</h3></a></button>
+				<ul class="comments" ng-show="showComment" style="list-style: none">
+				
+				<div class="post-comments " ng-repeat="comment in blogPost.blogComments | orderBy:'commentedOn'">
+				<div class="w3-col m7">
+   <br>
+    <div class="panel panel-default">
+      <div class="panel-heading"><p class="meta"><a href="#" style="color: #7d18b1;"><strong> {{comment.commentedBy.username}}</strong></a> says : <i class="pull-right"><a href="#" style="color: #7d18b1;"><strong>{{comment.commentedOn | date: 'medium'}}</strong></a></i></p></div>
+      <div class="panel-body"> <p>
+				         {{comment.commentText}}
+		
+				  </div>
+				  </div>
+    </div>
+   
+   
+   <!-- 
+      <div class="w3-row-padding">
+        <div class="w3-col m12">
+          <div class="w3-card w3-round w3-white">
+            <div class="w3-container w3-padding">
+				<p class="meta"><a href="#"><strong>{{comment.commentedBy.username}}</strong></a> says : <i class="pull-right"><a href="#"><small>{{comment.commentedOn | date: 'medium'}}</small></a></i></p>
+				      <p>
+				         {{comment.commentText}}
+		
+				  </div><br>
+				</div><br></div></div> -->
+						<div>
+				<textarea rows="2" cols="150" ng-model="commentText"></textarea>
+				<br>
+
+				<!-- Inser data into blogvomment value (?,blogpostid,username,commenttext,commentedon) -->
+				<input type="submit" ng-click="addComment()" value="POST COMMENT">
+			</div>
+				
+					<!-- <li ng-repeat="comment in blogPost.blogComments | orderBy:'commentedOn'">{{comment.commentText}}<br>
+					    <strong>Commented By:</strong>{{comment.commentedBy.username}}&nbsp; 
+						<strong>Commented On</strong>{{comment.commentedOn | date: 'medium'}}
+					</li> -->
+					
+					 
+				</ul>
+			<br><br><br>
+			</div>
+			
+		</div>
+
+           
+			
+
+<!-- <ul class="comments">
+				<li class="clearfix">
+				  <img src="https://bootdey.com/img/Content/user_1.jpg" class="avatar" alt="">
+				  <div class="post-comments">
+				      <p class="meta">Dec 18, 2014 <a href="#">JohnDoe</a> says : <i class="pull-right"><a href="#"><small>Reply</small></a></i></p>
+				      <p>
+				          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+				          Etiam a sapien odio, sit amet
+				      </p>
+				  </div>
+				</li> -->
+
+
+
+
+
+		<!-- END BLOG ENTRIES -->
+	</div>
+
+
+
+<!-- 
+<br><br>
+ <center>Approval BlogPost</center>
+<div class="row">
+<div>
+<div class="panel panel-default">
+<div class="panel-heading">
+<b>{{blogPost.blogTitle}}</b><br>
+
+<b>Created By:</b>{{blogPost.postedBy.firstname}}<br>
+<b>Created On:</b>{{blogPost.postedOn | date:'medium'}}
+</div>
+<div class="panel-body">
+{{blogPost.blogContent}}
+</div>
+<center><b> likes</b>{{blogPost.likes}}
+
+         <div ng-show="liked">
+          <span class="glyphicon glyphicon-thumbs-up" style="color:blue" ng-click="updateLikes()"></span>
+          </div>
+          <div ng-show="!liked">
+          <span class="glyphicon glyphicon-thumbs-up" style="color:black" ng-click="updateLikes()"> </span>
+          </div></center>
+<a></a>
+<br>
+</div>
+</div>
+</div>
+Blog Comments  -->
+

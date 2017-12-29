@@ -1,0 +1,33 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Oswald"
+}
+
+body {
+	font-family: "Open Sans"
+}
+
+.button {
+  padding: 15px 20px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.panel-info>.panel-heading {
+    color: #31708f;
+    background-color: #0fe2d8;
+    border-color: #bce8f1;
+}

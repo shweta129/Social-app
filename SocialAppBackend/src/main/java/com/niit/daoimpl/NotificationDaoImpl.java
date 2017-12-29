@@ -59,7 +59,7 @@ public class NotificationDaoImpl implements NotificationDao {
 
 	public List<CommentNotification> getNotificationComment(String username, int viewedcomment) {
 		Session session =sessionFactory.getCurrentSession();
-		Query query=session.createQuery("from CommentNotification where username=? and viewedcomment=?");
+		Query query=session.createQuery("from CommentNotification where username=? and viewedcomments=?");
 		query.setString(0, username);
 		query.setInteger(1, viewedcomment);
 		List<CommentNotification> commentnotifications=query.list();
@@ -69,7 +69,7 @@ public class NotificationDaoImpl implements NotificationDao {
 
 	public CommentNotification updateNotificationComment(int notificationId) {
 		Session session =sessionFactory.getCurrentSession();
-		CommentNotification commentNotification = (CommentNotification )session.get(CommentNotification .class, notificationId);
+		CommentNotification commentNotification =(CommentNotification )session.get(CommentNotification.class, notificationId);
 		commentNotification.setViewedcomments(true);
 		session.update(notificationId);
 		return commentNotification;
