@@ -94,7 +94,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
     </div>
   </div>
   
-
+   
+    <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-center w3-hover-white">
+    <button class="w3-button w3-padding-large" title="Job"><i class="fa fa-users " style="font-size:17px;"><b class="fa fa-angle-double-down " style="font-size:17px;"></b></i></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+      <a href="#/suggestedusers"  class="w3-bar-item w3-button">Find Friends</a>
+      <a href="#/getblogs"  class="w3-bar-item w3-button">Blogs List</a>
+     
+    </div>
+  </div>
 
 
 
@@ -103,38 +111,38 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
 <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-hover-white">
     <button class="w3-button w3-padding-large"  title="Notifications" ng-click="updateLength()"><i class="fa fa-bell" style="font-size:16px;" ng-click="updateLength()"></i>
     <span class="w3-badge w3-right w3-small w3-green" ng-if="notificationNotViewedLength>0 || notificationNotViewedLikeLength>0 || notificationNotViewedCommentLength>0" style="font-size:17px;">{{notificationNotViewedLength -- notificationNotViewedLikeLength -- notificationNotViewedCommentLength}}</span></button>     
-    <ul class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-    <li ng-repeat="notification in notificationNotViewed">
-      <a href="" ng-click="updateNotification(notification.id)" style="color:#10CE88">
-      <b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+    <div ng-repeat="notification in notificationNotViewed">
+      <a href="" ng-click="updateNotification(notification.id)" style="color:#10CE88"class="w3-bar-item w3-button">
+      <b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></div>
       
 
-     <li ng-repeat="notification in notificationViewed">
-      <a href="" ng-click="" style="color:black">
-      <b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
+     <div ng-repeat="notification in notificationViewed">
+      <a href="" ng-click="" style="color:black" class="w3-bar-item w3-button">
+      <b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></div>
       
       
       
             <!-- like -->
-            <li ng-repeat="notification in notificationNotViewedLike">
-      <a href="" ng-click="updateNotificationLike(notification.id)" style="color:#10CE88">
-      <b>"{{notification.likedBy.username}}"</b> liked your post {{notification.blogTitle}}</a></li>
+            <div ng-repeat="notification in notificationNotViewedLike">
+      <a href="" ng-click="updateNotificationLike(notification.id)" style="color:#10CE88" class="w3-bar-item w3-button">
+      <b>"{{notification.likedBy.username}}"</b> liked your post {{notification.blogTitle}}</a></div>
       
 
-     <li ng-repeat="notification in notificationViewedLike">
-      <a href="" ng-click="" style="color:black">
-      <b>"{{notification.likedBy.username}}"</b>  liked your post {{notification.blogTitle}}</a></li>
+     <div ng-repeat="notification in notificationViewedLike">
+      <a href="" ng-click="" style="color:black" class="w3-bar-item w3-button" class="w3-bar-item w3-button">
+      <b>"{{notification.likedBy.username}}"</b>  liked your post {{notification.blogTitle}}</a></div>
       
       <!-- comment -->
   
-            <li ng-repeat="notification in notificationNotViewedComment">
+            <div ng-repeat="notification in notificationNotViewedComment" class="w3-bar-item w3-button">
       <a href="" ng-click="updateNotificationComment(notification.id)" style="color:#10CE88">
-      <b>"{{notification.commentedBy.username}}"</b> commented your post {{notification.blogTitle}}</a></li>
+      <b>"{{notification.commentedBy.username}}"</b> commented your post {{notification.blogTitle}}</a></div>
       
 
-     <li ng-repeat="notification in notificationViewedComment">
-      <a href="" ng-click="" style="color:black;">
-      <b>"{{notification.commentedBy.username}}"</b> commented  your post {{notification.blogTitle}}</a></li>
+     <div ng-repeat="notification in notificationViewedComment">
+      <a href="" ng-click="" style="color:black;" class="w3-bar-item w3-button">
+      <b>"{{notification.commentedBy.username}}"</b> commented  your post {{notification.blogTitle}}</a></div>
       
       
       
@@ -186,7 +194,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
       
       
       
-    </ul>
+    </div>
   </div> 
   
   <!-- <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-hover-white">
@@ -318,9 +326,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
 <!--   <a href=""  ng-show="currentUser.username" ng-click="logout()" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log out"><i class="fa fa-power-off" style="font-size:19px;"></i></a> -->
   <div ng-show="currentUser.username" class=" w3-right w3-padding-large"> Welcome {{currentUser.username}}</div> 
    
+   
    <!-- profile  -->
    <a href="#/uploadpic" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="Edit User Profile">
-  <img src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/H2.png'" class="img-responsive img-circle" height="30" width="40" ></a> 
+  <img src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/avtar3.png'" class="img-responsive img-circle w3-right " height="30" width="40" ></a> 
   <!-- end -->
    
    
@@ -402,4 +411,6 @@ function onClick(element) {
 <script type="text/javascript" src="controllers/blogdetailscontroller.js"></script>
 <script type="text/javascript" src="services/homeservice.js"></script>
 <script type="text/javascript" src="controllers/homecontroller.js"></script>
+<script type="text/javascript" src="services/FriendService.js"></script>
+<script type="text/javascript" src="controllers/friendcontroller.js"></script>
 </html>

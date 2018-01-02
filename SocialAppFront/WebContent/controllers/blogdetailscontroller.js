@@ -22,7 +22,7 @@ app.controller('BlogDetailController', function($scope, $location, $routeParams,
 			$scope.liked=false
 			else
 				$scope.liked=true//user has already like the post
-				alert($scope.liked)
+				//alert($scope.liked)
 				
 	},function(response){
 		if (response.status==401) {
@@ -73,7 +73,8 @@ app.controller('BlogDetailController', function($scope, $location, $routeParams,
 		}
 		else
 		 BlogService.addComment($scope.commentText,id).then(function(response){
-			alert(response.status)
+			//alert(response.status)
+			 alert('Your comment successfully post')
 			$scope.commentText=''//empty string for list comment in order (one by one)
 			$scope.blogPost=response.data//BlogPost with list of blogcomment
 		},function(ressponse){

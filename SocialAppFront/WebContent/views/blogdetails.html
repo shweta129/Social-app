@@ -1,3 +1,4 @@
+<br><br>
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -32,19 +33,25 @@ and is wrapped around the whole page content, except for the footer in this exam
 		<!-- Header -->
 		<header class="w3-container w3-center w3-padding-48 w3-white">
 			<h1 class="w3-xxxlarge">
-				<b>JANE BLOGLIFE</b>
+				<b>iPost BLOGLIFE</b>
 			</h1>
 			<h4>
-			<marquee scrollamount="10" style="color: #fb0808!important;">Welcome to the blog of <span class="w3-tag">Jane's world</span></marquee>
+			<marquee scrollamount="10" style="color: #fb0808!important;">Welcome to the blog of <span class="w3-tag">iPost's world</span></marquee>
 			
 				
-	       </h4><br>
+	       </h4>
 	      <h4> <marquee scrollamount="5" width="40"style="color: #fb0808!important;">&lt;&lt;&lt;</marquee> <a href="#/addblog"  class="w3-bar-item w3-button"><b></strong>Click me to Add Blog</b></a><marquee scrollamount="5" direction="right" width="40" style="color: #fb0808!important;">&gt;&gt;&gt;</marquee></h4>
 		</header>
 
 	
 		<div class="w3-container w3-card w3-white w3-round w3-margin">
 			<br>
+			
+			<img
+				src="http://localhost:8080/SocialAppMRest/getimage/{{blogPost.postedBy.username}}"
+				alt="" onerror="this.src='images/avtar3.png'"
+				class="img-responsive img-circle  " style="margin:auto;max-width:100px"
+				height="100" width="100">
 			<div class="w3-center">
 				<h3>This is ,{{blogPost.postedBy.firstname}}</h3>
 				<h5>
@@ -89,7 +96,13 @@ and is wrapped around the whole page content, except for the footer in this exam
 				<div class="w3-col m7">
    <br>
      <div class="panel panel-default">
-      <div class="panel-heading"><p class="meta"><a href="#" style="color: #7d18b1;"><strong> {{comment.commentedBy.username}}</strong></a> says : <i class="pull-right"><a href="#" style="color: #7d18b1;"><strong>{{comment.commentedOn | date: 'medium'}}</strong></a></i></p></div>
+      <div class="panel-heading" >
+      
+      <p class="meta"><a href="#" style="color: #7d18b1;"><strong> <img
+				src="http://localhost:8080/SocialAppMRest/getimage/{{blogPost.postedBy.username}}"
+				alt="" onerror="this.src='images/avtar3.png' "
+				class="img-responsive img-circle  " 
+				height="40" width="40">{{comment.commentedBy.username}}</strong></a> says : <i class="pull-right"><a href="#" style="color: #7d18b1;"><strong>{{comment.commentedOn | date: 'medium'}}</strong></a></i></p></div>
       <div class="panel-body"> <p>
 				         {{comment.commentText}}
 		

@@ -90,6 +90,12 @@ app.config(function($routeProvider){
 	
 	})	
 	
+	.when('/suggestedusers',{                   
+	  templateUrl:'views/suggestedusers.html',  //view ng-repeat="p in persons"
+	   controller:'FriendController'       
+	
+	})	
+	
 	.otherwise('/login',{
 	  templateUrl:'views/loginForm.html',     //view ng-repeat="p in persons"
 	  controller:'UserController'   })
