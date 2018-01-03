@@ -12,5 +12,16 @@ app.controller('FriendController',function($scope,$location,FriendService){
 			  $location.path('/login')
 		})
 	}
+	
+	$scope.addFriendRequest=function(toId){
+		FriendService.addFriendRequest(toId).then(function(response){
+		alert('Friend request added successfully')
+		getAllSuggestedUsers()
+		},function(response){
+			if(response.status==401)
+			  $location.path('/login')
+		})
+	}
+	
 	getAllSuggestedUsers()
 })

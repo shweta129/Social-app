@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.dao.FriendDao;
+import com.niit.dto.Friend;
 import com.niit.dto.User;
 
 @Repository
@@ -34,5 +35,12 @@ public class FriendDaoImpl implements FriendDao {
 		query.addEntity(User.class);
 		List<User> suggestedUsers=query.list();
 		return suggestedUsers;
+	}
+
+	public void addFriendRequest(Friend friend) {
+		Session session = sessionFactory.getCurrentSession();
+		session.save(friend); // insert into friend value(fromId,tiId,status)
+		
+		
 	}
 }
