@@ -16,6 +16,7 @@
 			<span class="w3-opacity"><b>Friend Requests</b></span>
 		</h3>
 	</h1>
+	<center><a href="http://www.fillster.com/animated-glitters/1/" target="_blank"><img src="http://www.fillster.com/images/glitters/136n.gif" border="0" ></a><br /><a style="font-size: 12px;"  target="_blank"></a></center>
 	<h4>
 		<marquee scrollamount="10" style="color: #fb0808 !important;">
 			Choose Friends <span class="w3-tag">iPost's world</span>
@@ -64,7 +65,7 @@
        
            
            
-				<div class="w3-bar">
+				<div ng-show="pendingRequests.length>0" class="w3-bar">
 			
                      <!-- Accept -update friend set status ='A' where id=? -->
 					<button class=" w3-btn w3-bar-item w3-button w3-green" ng-click="updatePendingRequest(pendingrequest,'A')">Accept</button>
