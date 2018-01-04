@@ -96,6 +96,17 @@ app.config(function($routeProvider){
 	
 	})	
 	
+	.when('/pendingrequests',{                   
+	  templateUrl:'views/pendingrequests.html',  //view ng-repeat="p in persons"
+	   controller:'FriendController'       
+	
+	})
+	.when('/friends',{                   
+	  templateUrl:'views/friendslist.html',  //view ng-repeat="p in persons"
+	   controller:'FriendController'       
+	
+	})
+	
 	.otherwise('/login',{
 	  templateUrl:'views/loginForm.html',     //view ng-repeat="p in persons"
 	  controller:'UserController'   })

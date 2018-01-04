@@ -20,6 +20,14 @@ h1, h2, h3, h4, h5, h6 {
 body {
 	font-family: "Open Sans"
 }
+.w3-row .w3-col m3 .w3-bar-block a:hover{
+color:green;
+background-color:orange;
+}
+a:hover{
+color:#67C8FF;
+/* background-color:orange; */
+}
 </style>
 <body class="w3-light-grey">
 
@@ -95,7 +103,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 				<div class="post-comments " ng-repeat="comment in blogPost.blogComments | orderBy:'commentedOn'">
 				<div class="w3-col m7">
    <br>
-     <div class="panel panel-default">
+     <!-- <div class="panel panel-default">
       <div class="panel-heading" >
       
       <p class="meta"><a href="#" style="color: #7d18b1;"><strong> <img
@@ -107,7 +115,29 @@ and is wrapped around the whole page content, except for the footer in this exam
 				         {{comment.commentText}}
 		
 				  </div>
-				  </div>
+				  </div> -->
+				  
+				<div class="panel panel-default">
+				<div class="panel-heading" >
+        <img  src="http://localhost:8080/SocialAppMRest/getimage/{{blogPost.postedBy.username}}"
+				alt="" onerror="this.src='images/avtar3.png' " class="w3-left w3-circle w3-margin-right" style="width:50px;height:50px;">
+        <span class="w3-right w3-opacity">{{blogPost.postedOn | date:'medium'}}</span>
+        <h4>{{comment.commentedBy.firstname}} &nbsp;{{comment.commentedBy.lastname}}</h4><br>
+        </div>
+        <div class="panel-body">
+       
+        <p>{{comment.commentText}}</p>
+        </div>
+        
+        
+       
+        
+        
+<!--         <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button> 
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>  -->
+      </div>  
+				  
+				  
 				  
 				  
 				  </div></div>
