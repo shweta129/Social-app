@@ -58,15 +58,30 @@ body {
 </div>
 
 <form>
-<input type="radio" ng-model="blogPost.approved" value="true">Approve
-<input type="radio" ng-model="blogPost.approved" value="false">Reject
+
+
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+ 
+  <label class="btn btn-success">
+    <input type="radio" name="options" id="option2" autocomplete="off" ng-model="blogPost.approved" value="true">Approve
+  </label>
+  <label class="btn btn-danger">
+    <input type="radio" name="options" id="option3" autocomplete="off"ng-model="blogPost.approved" value="false">Reject
+  </label>
+</div>
+
+
+
+
+<!-- <input type="radio" ng-model="blogPost.approved" value="true">Approve
+<input type="radio" ng-model="blogPost.approved" value="false">Reject -->
 
 <div ng-show="blogPost.approved=='false'"> 
 Enter Rejection Reason
 <input type="text" ng-model="rejectionReason">
 </div>
 <br><br>
-<input type="submit"  class="btn btn-success"  ng-click="updateBlogPost()" >  <!-- update query/delete query -->
+<center><input type="submit"  class="btn btn-primary"  ng-click="updateBlogPost()" > </center> <!-- update query/delete query -->
 </form>
 {{error.message}}
 <br>
