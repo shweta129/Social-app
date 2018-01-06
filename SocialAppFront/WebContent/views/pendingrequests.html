@@ -38,13 +38,7 @@
 <Center><h3><p style="color:blue;">No pending Requests</p></h3></Center>
 </div>
 <table class="table table-striped" ng-show="pendingRequests.length>0">
-	<thead class="bg-primary">
-		<tr>
-			<td>Username</td>
-			<td></td>
-		</tr>
 
-	</thead>
 
 	<tbody>
 		<!-- pending request is the object of type friend -->
@@ -61,11 +55,11 @@
            
            <img  src="http://localhost:8080/SocialAppMRest/getimage/{{pendingrequest.fromId}}"
 				alt="" onerror="this.src='images/avtar3.png' " class="w3-left w3-circle w3-margin-right" style="width:50px;height:50px;">
-        <h4>{{pendingrequest.fromId}}</h4></td>
+        <h4>{{pendingrequest.fromId}}</h4>
        
            
            
-				<div ng-show="pendingRequests.length>0" class="w3-bar">
+				<div  class="w3-bar">
 			
                      <!-- Accept -update friend set status ='A' where id=? -->
 					<button class=" w3-btn w3-bar-item w3-button w3-green" ng-click="updatePendingRequest(pendingrequest,'A')">Accept</button>

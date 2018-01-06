@@ -118,13 +118,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
 <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-hover-white">
     <button class="w3-button w3-padding-large"  title="Notifications" ng-click="updateLength()"><i class="fa fa-bell" style="font-size:16px;" ng-click="updateLength()"></i>
     <span class="w3-badge w3-right w3-small w3-green" ng-if="notificationNotViewedLength>0 || notificationNotViewedLikeLength>0 || notificationNotViewedCommentLength>0" style="font-size:17px;">{{notificationNotViewedLength -- notificationNotViewedLikeLength -- notificationNotViewedCommentLength}}</span></button>     
+     <span class="notify">
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-    <div ng-repeat="notification in notificationNotViewed">
-      <a href="" ng-click="updateNotification(notification.id)" style="color:#10CE88"class="w3-bar-item w3-button">
+    <div class="dropdown-header" style="font-size:17px;"> Notifications</div>
+     <div class="divider"></div>
+    <div ng-repeat="notification in notificationNotViewed" >
+      <a href="" ng-click="updateNotification(notification.id)" style="color:#10CE88;background-color:#F0F8FF"class="w3-bar-item w3-button">
       <b>"{{notification.blogTitle}}"</b> is  <b>"{{notification.approvalStatus}} {{notification.rejectionReason}}</b></a></div>
       
 
-     <div ng-repeat="notification in notificationViewed">
+     <div ng-repeat="notification in notificationViewed" >
       <a href="" ng-click="" style="color:blue" class="w3-bar-item w3-button">
       <b>"{{notification.blogTitle}}"</b> is  <b>"{{notification.approvalStatus}} {{notification.rejectionReason}} </b></a></div>
       
@@ -149,198 +152,13 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
 
      <div ng-repeat="notification in notificationViewedComment">
       <a href="" ng-click="" style="color:blue;" class="w3-bar-item w3-button">
-      <b>"{{notification.commentedBy.username}}"</b> commented  your post  <b>"{{notification.blogTitle}}</b></a></div>
+      <b>"{{notification.commentedBy.username}}"</b> commented  your post  <b>"{{notification.blogTitle}}"</b></a></div>
       
-      
-      
-      
-      
-   
-
   
-  
-  
-  
- <!--  <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-hover-white">
-    <button class="w3-button w3-padding-large"  title="Notifications" ng-click="updateLength()"><i class="fa fa-bell" style="font-size:16px;" ng-click="updateLength()"></i>
-    <span class="w3-badge w3-right w3-small w3-green" ng-if="notificationNotViewedLength>0 || notificationViewedLikeLength>0  style="font-size:17px;">{{notificationNotViewedLength -- notificationViewedLikeLength}}</span></button>     
-    <ul class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-    <li ng-repeat="notification in notificationNotViewed">
-      <a href="" ng-click="updateNotification(notification.id)" style="color:#10CE88">
-      <b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
-      
-
-     <li ng-repeat="notification in notificationViewed">
-      <a href="" ng-click="" style="color:black">
-      <b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
-      
-      
-      
-            like
-            <li ng-repeat="notification in notificationNotViewedLike">
-      <a href="" ng-click="updateNotificationLike(notification.id)" style="color:#10CE88">
-      <b>"{{notification.likedBy.username}}"</b> is liked your post {{notification.bolgTitle}}</a></li>
-      
-
-     <li ng-repeat="notification in notificationViewedLike">
-      <a href="" ng-click="" style="color:black">
-      <b>"{{notification.likedBy.username}}"</b> is liked your post {{notification.bolgTitle}}</a></li> -->
-      
-      <!-- comment -->
-  
-          <!--   <li ng-repeat="notification in notificationNotViewedComment">
-      <a href="" ng-click="updateNotificationLike(notification.id)" style="color:#10CE88">
-      <b>"{{notification.commentedBy.username}}"</b> is liked your post {{notification.bolgTitle}}</a></li>
-      
-
-     <li ng-repeat="notification in notificationViewedComment">
-      <a href="" ng-click="" style="color:black">
-      <b>"{{notification.commentedBy.username}}"</b> is liked your post {{notification.bolgTitle}}</a></li>
-       -->
-      
-      
-      
-      
     </div>
+    </span>
   </div> 
   
-  <!-- <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-hover-white">
-    <button class="w3-button w3-padding-large"  title="Notifications" ng-click="updateLength()"><i class="fa fa-bell" style="font-size:16px;" ng-click="updateLength()"></i><span class="w3-badge w3-right w3-small w3-green" ng-if="notificationNotViewedLength>0" style="font-size:17px;">{{notificationNotViewedLength}}</span></button>     
-    <ul class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-    <li ng-repeat="notification in notificationNotViewed">
-      <a href="" ng-click="updateNotification(notification.id)" style="color:#10CE88">
-      <b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
-      
-
-     <li ng-repeat="notification in notificationViewed">
-      <a href="" ng-click="" style="color:black">
-      <b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
-    </ul>
-  </div> 
-   -->
-  
-  
-  <!-- <li class="dropdown" ng-show="currentUser.username" 
-					style="padding-top: 13px; font-weight: bold; background-color: #286090;">
-					<a   href=" " class="dropdown-toggle" data-toggle="dropdown"
-					style="color: white; font-weight: bold; text-decoration: none;border-style:none; background-color: #286090; font-size: 17px;" >
-					<span class="glyphicon glyphicon-globe" style="font-size:20px;" ng-click="updateLength()">
-					<span class="rw-number-notification" ng-if="notificationNotViewedLength>0 || notificationNotViewedJobLength>0  || notificationNotViewedLikeLength>0  || notificationNotViewedCommentLength>0  ">
-					{{notificationNotViewedLength -- notificationNotViewedJobLength -- notificationNotViewedLikeLength -- notificationNotViewedCommentLength }}</span></span></a>
-					<span class="notify">
-					<ul class="dropdown-menu">
-					  <li class="dropdown-header" style="font-size:15px;">Notifications</li>
-					  <li class="divider"></li>
-					  <li ng-repeat="notification in notificationNotViewedJob" style="background-color:#F0F8FF"  tabindex="-1">
-						<a href="" ng-click="updateNotificationJob(notification.id)" style="color:red;background-color:#F0F8FF">
-						New Job for <b>"{{notification.jobTitle}}"</b> is available for you to apply .
-						</a></li>
-						 <li ng-if="notificationNotViewedJobLength>0" class="divider"></li>
-						 
-						 <li ng-repeat="notification in notificationNotViewedLike" style="background-color:#F0F8FF"  tabindex="-1">
-						<a href="" ng-click="updateNotificationLike(notification.id)" style="color:red;background-color:#F0F8FF">
-						 <b> '{{notification.likedBy.firstname}} &nbsp;{{notification.likedBy.lastname}} '</b> liked your post <b>"{{notification.blogTitle}}"</b>
-						</a></li>
-						 <li ng-if="notificationNotViewedLikeLength>0" class="divider"></li>
-						 
-						 <li ng-repeat="notification in notificationViewedLike"   tabindex="-1">
-						<a href="" ng-click=" " style="color:blue">
-						<b> '{{notification.likedBy.firstname}}&nbsp;{{notification.likedBy.lastname}}'</b> liked your post <b>"{{notification.blogTitle}}"</b>
-						</a></li>
-						   <li ng-if="notificationViewedLikeLength>0" class="divider"></li>
-						   
-						   <li ng-repeat="notification in notificationNotViewedComment" style="background-color:#F0F8FF"  tabindex="-1">
-						<a href="" ng-click="updateNotificationComment(notification.id)" style="color:red;background-color:#F0F8FF">
-						<b>' {{notification.commentedBy.firstname}} {{notification.commentedBy.lastname}}' </b>commented on your post <b>"{{notification.blogTitle}}"</b>
-						</a></li>
-						 <li ng-if="notificationNotViewedCommentLength>0" class="divider"></li>
-						 
-						 <li ng-repeat="notification in notificationViewedComment"   tabindex="-1">
-						<a href="" ng-click=" " style="color:blue">
-						<b> '{{notification.commentedBy.firstname}} {{notification.commentedBy.lastname}}' </b> commented on your post <b>"{{notification.blogTitle}}"</b>
-						</a></li>
-						   <li ng-if="notificationViewedCommentLength>0" class="divider"></li>
-						   
-					  <li ng-repeat="notification in notificationViewedJob"   tabindex="-1">
-						<a href="" ng-click=" " style="color:blue">
-						New Job for <b>"{{notification.jobTitle}}"</b> is available for you to apply .
-						</a></li>
-						 <li ng-if="notificationViewedJobLength>0" class="divider"></li>
-						<li ng-repeat="notification in notificationNotViewed" style="background-color:#F0F8FF"  tabindex="-1">
-						<a href="" ng-click="updateNotification(notification.id)" style="color:red;background-color:#F0F8FF">
-						Your blog titled <b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} <span ng-if="notification.rejectionReason!=null"> due to  {{notification.rejectionReason}}
-						</span>
-						</a></li>
-						  <li  ng-if="notificationNotViewedLength>0" class="divider"></li>
-						<li ng-repeat="notification in notificationViewed"  tabindex="-1">
-						<a href="" ng-click="" style="color:blue">
-						Your blog titled <b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} {{notification.rejectionReason}}
-						</a></li>						
-					</ul>
-					</span>				
-					</li> -->
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  <!-- <a href="" class="w3-dropdown-hover w3-hide-small w3-center w3-hover-white" ng-show="currentUser.username">
-  <span class="glyphicon glyphicon-globe" ng-click="updateLenght()">
-  <span class="rw-number-notification" ng-if="notificationNotViewedLength>0">{{notificationNotViewedLenght}}</span>
-  <ul class="dropdown-menu">
-    <li ng-repeat="notification in notificationNotViewed">
-    <a href="" ng-click="updateNotification(notification.id)" style="color:red">
-    <b>"{{notification.blogTitle}}"</b> is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
-    
-    <li ng-repeat="notification in notificationViewed">
-    <a href="" ng-click="" style="color:blue">
-    {{notification.blogTitle}} is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
-  </ul>
-  </li>
-   -->
-   
-   
-  
-  
-  
-  
-  <a  href="javascript:void(0)" class="w3-right w3-button w3-hover-white w3-hide-small w3-padding-large" onclick="w3_open() "><span class="glyphicon glyphicon-th-list" style="font-size:19px;"></span></a>
-  <!-- <a href="#" ng-show="currentUser.username"  class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"><img src="/w3images/avatar2.png" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a> -->
-  <a  href="#" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><img src="images/logo.jp" alt="logo" style="width:50px;"></a>
-  
-  <a href=""  ng-show="currentUser.username" ng-click="logout()" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log out"><i class="fa fa-power-off" style="font-size:19px;"></i></a>
-  
-  
-  <a href="#/register" ng-hide="currentUser.username"  class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="User registration">sign up</a>
-  <a href="#/login" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log in">sign in</a>
-<!--   <a href=""  ng-show="currentUser.username" ng-click="logout()" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log out"><i class="fa fa-power-off" style="font-size:19px;"></i></a> -->
-  <div ng-show="currentUser.username" class=" w3-right w3-padding-large"> Welcome {{currentUser.username}}</div> 
-   
-   
-   <!-- profile  -->
-   <a href="#/uploadpic" ng-show="currentUser.username" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="Edit User Profile">
-  <img src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/avtar3.png'" class="img-responsive img-circle w3-right " height="30" width="40" ></a> 
-  <!-- end -->
-   
-   
-   
     <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-center w3-hover-white">
     <button class="w3-button w3-padding-large" title="Job"><i class="fa fa-graduation-cap " style="font-size:17px;"><b class="fa fa-angle-double-down " style="font-size:18px;"></b></i><span class="w3-badge w3-right w3-small w3-green" style="font-size:45px;"></span></button>     
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
@@ -349,6 +167,36 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
      
     </div>
   </div>
+ 
+  <a  href="javascript:void(0)" class="w3-right w3-button w3-hover-white w3-hide-small w3-padding-large" onclick="w3_open() "><span class="glyphicon glyphicon-th-list" style="font-size:19px;"></span></a>
+  <!-- <a href="#" ng-show="currentUser.username"  class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"><img src="/w3images/avatar2.png" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a> -->
+  <a  href="#" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><img src="images/logo.jp" alt="logo" style="width:50px;"></a>
+  
+ <!--  <a href=""  ng-show="currentUser.username" ng-click="logout()" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log out"><i class="fa fa-power-off" style="font-size:19px;"></i></a> -->
+  
+  
+  <a href="#/register" ng-hide="currentUser.username"  class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="User registration">sign up</a>
+  <a href="#/login" ng-hide="currentUser.username" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log in">sign in</a>
+<!--   <a href=""  ng-show="currentUser.username" ng-click="logout()" class="w3-bar-item w3-button w3-right w3-hide-small w3-padding-large w3-hover-white" title="log out"><i class="fa fa-power-off" style="font-size:19px;"></i></a> -->
+<!--   <div ng-show="currentUser.username" class=" w3-right w3-padding-large">  {{currentUser.username}}</div>  -->
+
+
+    <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-right w3-hover-white">
+    <button class="w3-button w3-padding-large" title="logout"><img src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/avtar3.png'" class="img-responsive img-circle w3-right " height="30" width="40" ><b class="fa fa-angle-double-down " style="font-size:17px;"></b></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+      <a href="" ng-click="logout()" class="w3-bar-item w3-button">Logout</a>
+      
+    </div>
+  </div>
+   
+   <!-- profile  -->
+   <!-- <div ng-show="currentUser.username" class="w3-bar-item  w3-hide-small w3-right w3-padding-large " >
+  <img src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/avtar3.png'" class="img-responsive img-circle w3-right " height="30" width="40" ></div>
+    -->
+  <!-- end -->
+   
+   
+   
    
    <!-- Sidebar/menu -->
    <br><br>

@@ -1,4 +1,4 @@
-package com.niit.dto;
+/*package com.niit.dto;
 
 import javax.persistence.Entity;
 
@@ -31,3 +31,4 @@ public class Chat {
 	
 
 }
+*/

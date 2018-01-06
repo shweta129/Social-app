@@ -11,6 +11,7 @@ body {font-size: 16px;}
 img {margin-bottom: -8px;}
 .mySlides {display: none;}
 .w3-btn {margin-bottom:10px;}
+
 </style>
 <body class="w3-content w3-black" style="max-width:1500px;">
 
@@ -81,23 +82,28 @@ function carousel() {
           <!--  Profile -->
       <div class="w3-card w3-round w3-white">
         <div class="w3-container">
-         <h4 class="w3-center">My Profile</h4>
-         <p class="w3-center">
+    
+         
+         <center> <h4 style="color:white"><marquee  bgcolor="red" onmouseover="this.stop()" onmouseout="this.start()" direction="right"> Welcome {{currentUser.username}} !!!</marquee></h4>
+    <p class="w3-center"><img  class="img-rounded"  src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/avtar3.png'"  width="160" height="160" style="color:white; border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 160px; height:160px;"></p>
+    
+         
+        <!--  <p class="w3-center">
           
-         <img src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/avtar3.png'" class="w3-circle" style="height:150px;width:180px" >
+         <img src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/avtar3.png'" class="w3-circle" style="height:150px;width:180px" > -->
     
     
-         <br><br> 
+         <br>
          </a></p>
   
       
-      <center><a href="#/uploadpic" class="w3-btn w3-white w3-border w3-border-red w3-round-large" role="button">Upload profile picture</a></center><br>   
+      <center><a href="#/uploadpic" class="w3-btn w3-white w3-border w3-border-red w3-round-large" role="button">Upload profile picture</a></center>   
          
          <hr>
 
-         <a href="#/editprofile"  class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-gray"><i  class="fa fa-pencil-square-o fa-fw w3-margin-right w3-text-theme" aria-hidden="true" style="font-size:19px;"></i>Edit Profile</a>
-         <a href="#/friends"  class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-gray"><i class="fa fa-users fa-fw w3-margin-right w3-text-theme" aria-hidden="true" style="font-size:19px;"></i>Friend List</a> 
-         <a href="#/alljobs"  class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-gray"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-text-theme" aria-hidden="true" style="font-size:19px;"></i> Job List</a>
+         <a href="#/editprofile"  class="w3-bar-item w3-left w3-button w3-hide-small w3-padding-large w3-hover-gray"><i  class="fa fa-pencil-square-o fa-fw w3-margin-right w3-text-theme" aria-hidden="true" style="font-size:19px;"></i>Edit Profile</a>
+         <a href="#/friends"  class="w3-bar-item w3-left w3-button w3-hide-small w3-padding-large w3-hover-gray"><i class="fa fa-users fa-fw w3-margin-right w3-text-theme" aria-hidden="true" style="font-size:19px;"></i>Friend List</a> 
+         <a href="#/alljobs"  class="w3-bar-item w3-left w3-button w3-hide-small w3-padding-large w3-hover-gray"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-text-theme" aria-hidden="true" style="font-size:19px;"></i> Job List</a>
         </div>
       </div>
         </div>
@@ -138,7 +144,7 @@ function carousel() {
   <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
   <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" onclick="plusDivs(1)">Take Tour <i class="fa fa-angle-right"></i></a>
 </header>
-<marquee bgcolor="#66CD00" style="height:50px" ><b><br>Welcome {{currentUser.username}}</b></marquee>
+<marquee bgcolor="#66CD00" style="height:50px" ><b><br>This is iPost wold</b></marquee>
  
  
 <script>
@@ -154,7 +160,7 @@ function carousel() {
     myIndex++;
     if (myIndex > x.length) {myIndex = 1}    
     x[myIndex-1].style.display = "block";  
-    setTimeout(carousel, 2000); // Change image every 2 seconds
+    setTimeout(carousel, 3000); // Change image every 2 seconds
 }
 </script>
           
