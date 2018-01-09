@@ -1,15 +1,16 @@
-/*package com.niit.dto;
+package com.niit.dto;
+
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
-@Entity
+
 public class Chat {
-	
 	private String from;
 	private String to;
 	private String message;
 	
-	//getter setter
+	
 	public String getFrom() {
 		return from;
 	}
@@ -29,6 +30,7 @@ public class Chat {
 		this.message = message;
 	}
 	
+	
+	
 
 }
-*/

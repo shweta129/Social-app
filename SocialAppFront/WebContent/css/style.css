@@ -11,7 +11,7 @@ a,
 
 .signup__container {
   position: absolute;
-  top: 60%;
+  top: 50%;
   right: 0;
   left: 0;
   margin-right: auto;
@@ -46,7 +46,7 @@ a,
 .container__child {
   width: 50%;
   height: 100%;
-  color: #400040;
+  color: #fff;
 }
 
 .signup__thumbnail {
@@ -100,7 +100,7 @@ a,
 h1,
 h2 {
   font-weight: 300;
-  color: #00ffff;
+  color: black;
 }
 
 .heading--primary {
@@ -119,7 +119,7 @@ h2 {
 
 .thumbnail__links a {
   font-size: 1rem;
-  color: #00ffff;
+  color: #fff;
 }
 .thumbnail__links a:focus, .thumbnail__links a:hover {
   color: rgba(255, 255, 255, 0.5);
@@ -127,7 +127,7 @@ h2 {
 
 .signup__form {
   padding: 2.5rem;
-  background: #ffffff;
+  background: #fafafa;
 }
 
 label {
@@ -177,5 +177,3 @@ label {
 .signup__link:focus, .signup__link:hover {
   color: #787878;
 }
-
-

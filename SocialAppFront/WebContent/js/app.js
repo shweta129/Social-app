@@ -78,6 +78,12 @@ app.config(function($routeProvider){
 	
 	})	
 	
+	.when('/blogimage/:id',{                   
+	  templateUrl:'views/blogpicpost.html',  //view ng-repeat="p in persons"
+	  controller:'BlogDetailController'         //Controller $scope.user
+	
+	})	
+	
 	.when('/home',{                   
 	  templateUrl:'views/home.html',  //view ng-repeat="p in persons"
 	   controller:'HomeController'       

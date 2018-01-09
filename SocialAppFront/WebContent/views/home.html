@@ -11,7 +11,25 @@ body {font-size: 16px;}
 img {margin-bottom: -8px;}
 .mySlides {display: none;}
 .w3-btn {margin-bottom:10px;}
+<!--zoom-->
+* {
+    box-sizing: border-box;
+}
 
+.zoom {
+    padding: 20px;
+    background-color: black;
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5); 
+}
 </style>
 <body class="w3-content w3-black" style="max-width:1500px;">
 
@@ -85,9 +103,10 @@ function carousel() {
     
          
          <center> <h4 style="color:white"><marquee  bgcolor="red" onmouseover="this.stop()" onmouseout="this.start()" direction="right"> Welcome {{currentUser.username}} !!!</marquee></h4>
-    <p class="w3-center"><img  class="img-rounded"  src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/avtar3.png'"  width="160" height="160" style="color:white; border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 160px; height:160px;"></p>
-    
-         
+   <div class="zoom"><p class="w3-center"><img  class="img-rounded"  src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/avtar3.png'"  width="160" height="160" style="color:white; border: 1px solid #ddd; border-radius: 4px; padding: 5px; width: 160px; height:160px;">
+    </div>
+    </p>
+   
         <!--  <p class="w3-center">
           
          <img src="http://localhost:8080/SocialAppMRest/getimage/{{currentUser.username}}"  alt="" onerror="this.src='images/avtar3.png'" class="w3-circle" style="height:150px;width:180px" > -->
@@ -103,7 +122,7 @@ function carousel() {
 
          <a href="#/editprofile"  class="w3-bar-item w3-left w3-button w3-hide-small w3-padding-large w3-hover-gray"><i  class="fa fa-pencil-square-o fa-fw w3-margin-right w3-text-theme" aria-hidden="true" style="font-size:19px;"></i>Edit Profile</a>
          <a href="#/friends"  class="w3-bar-item w3-left w3-button w3-hide-small w3-padding-large w3-hover-gray"><i class="fa fa-users fa-fw w3-margin-right w3-text-theme" aria-hidden="true" style="font-size:19px;"></i>Friend List</a> 
-         <a href="#/alljobs"  class="w3-bar-item w3-left w3-button w3-hide-small w3-padding-large w3-hover-gray"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-text-theme" aria-hidden="true" style="font-size:19px;"></i> Job List</a>
+         <a href="#/addjob" class="w3-bar-item w3-left w3-button w3-hide-small w3-padding-large w3-hover-gray"><i class="fa fa-graduation-cap fa-fw w3-margin-right w3-text-theme" aria-hidden="true" style="font-size:19px;"></i> Add Job</a>
         </div>
       </div>
         </div>
@@ -128,13 +147,13 @@ function carousel() {
   </div> 
   <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button>
   <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="images/H5.jpg" alt="Image 1" style=" width:840; height:300" >
+    <img class="w3-image" src="images/H5.jpg" alt="Image 1" style=" width:840; height:100" >
     <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
     
     </div>
   </div>
   <div class="mySlides w3-animate-opacity">
-    <img class="w3-image" src="images/H4.jpg" alt="Image 2" style=" width:840; height:300" >
+    <img class="w3-image" src="images/H4.jpg" alt="Image 2" style=" width:840; height:100" >
   
   </div>
   <!-- <div class="mySlides w3-animate-opacity">
@@ -168,230 +187,6 @@ function carousel() {
 
 
   </div>
-
-
-
-
-<!-- Page Container -->
-<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">    
- <!--  The Grid -->
-  <div class="w3-row">
-    <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
-  <div class="w3-container">
-    <a href="#" onclick="w3_close()" class="w3-hide-large w3-right w3-jumbo w3-padding w3-hover-grey" title="close menu">
-      <i class="fa fa-remove"></i>
-    </a>
-    <img src="/w3images/avatar_g2.jpg" style="width:45%;" class="w3-round"><br><br>
-    <h4><b>PORTFOLIO</b></h4>
-    <p class="w3-text-grey">Template by W3.CSS</p>
-  </div>
-  <div class="w3-bar-block">
-    <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>PORTFOLIO</a> 
-    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>ABOUT</a> 
-    <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-envelope fa-fw w3-margin-right"></i>CONTACT</a>
-  </div>
-  <div class="w3-panel w3-large">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
-</nav>
-
-<!-- Overlay effect when opening sidebar on small screens -->
-<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-<!-- end -->
-      
-     <!--  Accordion -->
-      <div class="w3-card w3-round">
-        <div class="w3-white">
-          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
-          <div id="Demo1" class="w3-hide w3-container">
-            <p>Some text..</p>
-          </div>
-          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
-          <div id="Demo2" class="w3-hide w3-container">
-            <p>Some other text..</p>
-          </div>
-          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
-          <div id="Demo3" class="w3-hide w3-container">
-         <div class="w3-row-padding">
-         <br>
-           <div class="w3-half">
-             <img src="/w3images/lights.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/mountains.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/forest.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/nature.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-           <div class="w3-half">
-             <img src="/w3images/fjords.jpg" style="width:100%" class="w3-margin-bottom">
-           </div>
-         </div>
-          </div>
-        </div>      
-      </div>
-      <br>
-      
-     <!--  Interests --> 
-      <div class="w3-card w3-round w3-white w3-hide-small">
-        <div class="w3-container">
-          <p>Interests</p>
-          <p>
-            <span class="w3-tag w3-small w3-theme-d5">News</span>
-            <span class="w3-tag w3-small w3-theme-d4">W3Schools</span>
-            <span class="w3-tag w3-small w3-theme-d3">Labels</span>
-            <span class="w3-tag w3-small w3-theme-d2">Games</span>
-            <span class="w3-tag w3-small w3-theme-d1">Friends</span>
-            <span class="w3-tag w3-small w3-theme">Games</span>
-            <span class="w3-tag w3-small w3-theme-l1">Friends</span>
-            <span class="w3-tag w3-small w3-theme-l2">Food</span>
-            <span class="w3-tag w3-small w3-theme-l3">Design</span>
-            <span class="w3-tag w3-small w3-theme-l4">Art</span>
-            <span class="w3-tag w3-small w3-theme-l5">Photos</span>
-          </p>
-        </div>
-      </div>
-      <br>
-      
-      <!-- Alert Box -->
-      <div class="w3-container w3-display-container w3-round w3-theme-l4 w3-border w3-theme-border w3-margin-bottom w3-hide-small">
-        <span onclick="this.parentElement.style.display='none'" class="w3-button w3-theme-l3 w3-display-topright">
-          <i class="fa fa-remove"></i>
-        </span>
-        <p><strong>Hey!</strong></p>
-        <p>People are looking at your profile. Find out who.</p>
-      </div>
-    
-    <!-- End Left Column -->
-    </div>
-
-<div class="w3-col m9">
-   
-      <div class="w3-row-padding">
-         <div class="w3-col m20">
-          <div class="w3-card w3-round w3-white">
-            <div class="w3-container w3-padding">
-              <h1 class="w3-jumbo"><b>The App</b></h1>
-      <h1 class="w3-xxxlarge w3-text-green"><b>Why This App?</b></h1>
-      <p><span class="w3-xlarge">You can share what is in your mind,</span> people comments and likes your Post.You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-        ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-      <button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small" onclick="document.getElementById('download').style.display='block'">
-        <i class="fa fa-download"></i> Download Application
-      </button>
-      <p>Available for <i class="fa fa-android w3-xlarge w3-text-green"></i> <i class="fa fa-apple w3-xlarge"></i> <i class="fa fa-windows w3-xlarge w3-text-blue"></i></p>
-    </div>
-    <div class="w3-col l4 m6">
-      <img src="/w3images/img_app.jpg" class="w3-image w3-right w3-hide-small" width="335" height="471">
-      <div class="w3-center w3-hide-large w3-hide-medium"><br><br><br>
-        <button class="w3-button w3-block w3-padding-large" onclick="document.getElementById('download').style.display='block'">
-          <i class="fa fa-download"></i> Download Application
-        <br><br><br><br><br><br>
-            </div>
-          </div>
-        </div>
-        <br>
-      </div> 
-
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-<!-- Modal -->
-<div id="download" class="w3-modal w3-animate-opacity">
-  <div class="w3-modal-content" style="padding:32px">
-    <div class="w3-container w3-white">
-      <i onclick="document.getElementById('download').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
-      <h2 class="w3-wide">DOWNLOAD</h2>
-      <p>Download the app in AppStore, Google Play or Microsoft Store.</p>
-      <i class="fa fa-android w3-large"></i> <i class="fa fa-apple w3-large"></i> <i class="fa fa-windows w3-large"></i>
-      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
-      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('download').style.display='none'">Fake Download</button>
-    </div>
-  </div>
-</div>
-
-
-<!-- Features Section -->
-<div class="w3-container w3-padding-64 w3-dark-grey w3-center">
-  <h1 class="w3-jumbo"><b>Features</b></h1>
-  <p>This app is just so lorem ipsum.</p>
-
-  <div class="w3-row" style="margin-top:64px">
-    <div class="w3-col s3">
-      <i class="fa fa-bolt w3-text-orange w3-jumbo"></i>
-      <p>Fast</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-heart w3-text-red w3-jumbo"></i>
-      <p>Loved</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-comments-o w3-text-white w3-jumbo"></i>
-      <p>Blogs</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-bell w3-text-yellow w3-jumbo"></i>
-      <p>Notifications</p>
-    </div>
-  </div>
-
-  <div class="w3-row" style="margin-top:64px">
-    <div class="w3-col s3">
-      <i class="fa fa-graduation-cap w3-text-black w3-jumbo"></i>
-      <p>Job</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-envelope w3-text-blue w3-jumbo"></i>
-      <p>chat</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-home w3-text-amber w3-jumbo"></i>
-      <p>Home</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-pencil-square-o w3-text-cyan w3-jumbo"></i>
-      <p>Edit Profile</p>
-    </div>
-  </div>
-  
-  <div class="w3-row" style="margin-top:64px">
-    <div class="w3-col s3">
-      <i class="fa fa-user w3-text-sand w3-jumbo"></i>
-      <p>Friends</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-shield w3-text-orange w3-jumbo"></i>
-      <p>Stabile</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-wifi w3-text-grey w3-jumbo"></i>
-      <p>Connected</p>
-    </div>
-    <div class="w3-col s3">
-      <i class="fa fa-image w3-text-pink w3-jumbo"></i>
-      <p>HD</p>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
 
 
 

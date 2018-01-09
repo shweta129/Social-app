@@ -14,11 +14,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import com.niit.dao.BlogPicPostDao;
 import com.niit.dao.BlogPostDao;
 import com.niit.dao.BlogPostLikesDao;
 import com.niit.dao.UserDao;
 import com.niit.dto.BlogComment;
+import com.niit.dto.BlogPicPost;
 import com.niit.dto.BlogPost;
 import com.niit.dto.BlogPostLikes;
 import com.niit.dto.ErroClazz;
@@ -35,6 +39,9 @@ public class BlogPostController {
 
 	@Autowired
 	private BlogPostLikesDao blogPostLikesDao;
+	
+	@Autowired
+	private BlogPicPostDao blogPicPostDao;
 
 	@RequestMapping(value = "/saveblog", method = RequestMethod.POST)
 	public ResponseEntity<?> saveBlogPost(HttpSession session, @RequestBody BlogPost blogPost) {
@@ -60,6 +67,11 @@ public class BlogPostController {
 		return new ResponseEntity<BlogPost>(blogPost, HttpStatus.OK);
 	}
 
+	
+	
+	
+	
+	
 	@RequestMapping(value = "/getblogs/{approved}", method = RequestMethod.GET)
 	public ResponseEntity<?> getBlogs(@PathVariable int approved, HttpSession session) {
 

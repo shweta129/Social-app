@@ -2,10 +2,11 @@
  * BlogDetailsController
  */
 
-app.controller('BlogDetailController', function($scope, $location, $routeParams, BlogService) {
+app.controller('BlogDetailController', function($scope, $location, $routeParams,$rootScope, BlogService) {
 
 	var id = $routeParams.id
     $scope.showComment=false;
+	
 	
 	BlogService.getBlogPost(id).then(function(response) {
 		$scope.blogPost = response.data
@@ -15,6 +16,7 @@ app.controller('BlogDetailController', function($scope, $location, $routeParams,
 
 		}
 	})
+	
 	
 	//select * from blogpostlikes where blogpost_id=? nd user_username=?
 	BlogService.userLikes(id).then(function(response){
