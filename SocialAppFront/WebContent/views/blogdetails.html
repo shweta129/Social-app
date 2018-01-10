@@ -67,7 +67,10 @@ and is wrapped around the whole page content, except for the footer in this exam
 				</h5>
 				<center><h4>{{blogPost.blogTitle}}</h4></center>
 				
-				<center><a href="#/blogimage/{{blogPost.id}}" ng-if="currentUser.username==blogPost.postedBy.username"><button ng-show="currentUser.username==blogPost.postedBy.username" class="w3-btn w3-white w3-border w3-border-red w3-round-large" role="button">Upload Image</button></a></center>   
+				<!-- <center><a href="#/blogimage/{{blogPost.id}}" ng-if="currentUser.username==blogPost.postedBy.username"><button ng-show="currentUser.username==blogPost.postedBy.username" class="w3-btn w3-white w3-border w3-border-red w3-round-large" role="button">Upload Image</button></a></center>    -->
+				 
+				  <a href="#/blogimage/{{blogPost.id}}" ng-if="currentUser.username==blogPost.postedBy.username"><button   ng-show="currentUser.username==blogPost.postedBy.username" style="align:right;margin-left:700px;" class="w3-button w3-white w3-border w3-border-teal w3-round-large"  data-toggle="collapse" data-target="#blogimage">
+ <span class="glyphicon glyphicon-upload"></span> &nbsp;Upload Image</button></a>
 				  
 			</div>
 			<hr/>

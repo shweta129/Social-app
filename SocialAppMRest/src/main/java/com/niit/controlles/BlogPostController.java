@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
-import com.niit.dao.BlogPicPostDao;
+import com.niit.dao.BlogImageDao;
 import com.niit.dao.BlogPostDao;
 import com.niit.dao.BlogPostLikesDao;
 import com.niit.dao.UserDao;
 import com.niit.dto.BlogComment;
-import com.niit.dto.BlogPicPost;
+import com.niit.dto.BlogImage;
 import com.niit.dto.BlogPost;
 import com.niit.dto.BlogPostLikes;
 import com.niit.dto.ErroClazz;
@@ -41,7 +41,7 @@ public class BlogPostController {
 	private BlogPostLikesDao blogPostLikesDao;
 	
 	@Autowired
-	private BlogPicPostDao blogPicPostDao;
+	private BlogImageDao blogImageDao;
 
 	@RequestMapping(value = "/saveblog", method = RequestMethod.POST)
 	public ResponseEntity<?> saveBlogPost(HttpSession session, @RequestBody BlogPost blogPost) {
@@ -68,7 +68,38 @@ public class BlogPostController {
 	}
 
 	
+	@RequestMapping(value="/uploadblogimage/{id}",method=RequestMethod.POST)
+	public ResponseEntity<?> uploadBlogImage(@PathVariable int id , @RequestParam CommonsMultipartFile image, HttpSession session)
+	{
+		 String username=(String)session.getAttribute("username");
+		   if(username==null)
+			{
+				ErroClazz error=new ErroClazz(5,"UnAuthorized Access");
+				return new ResponseEntity<ErroClazz>(error,HttpStatus.UNAUTHORIZED); //401
+			}
+		  BlogImage blogImage=new BlogImage();
+		  blogImage.setImage(image.getBytes());
+		 blogImage.setId(id);
+		  blogImageDao.saveorUpdateBlogImage(blogImage);
+		  return new ResponseEntity<BlogImage>(blogImage,HttpStatus.OK);
+	}
 	
+	//login: smith
+	//http://localhost:8080/Ecollaborationmiddleware/getimage/{{username}}
+	@RequestMapping(value="/getblogimage/{id}",method=RequestMethod.GET)
+	public @ResponseBody byte[] getBlogImage(@PathVariable int id,HttpSession session)
+	{
+		String loginId=(String) session.getAttribute("username");
+		if(loginId==null)
+		{
+			return null;
+		}
+		BlogImage blogImage=blogImageDao.getBlogImage(id);
+		if(blogImage==null)
+			return null;
+		else
+			return blogImage.getImage();
+	}
 	
 	
 	
