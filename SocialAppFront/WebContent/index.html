@@ -90,7 +90,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif,"Raleway"}
 
 
  
-  <a href="#" ng-show="currentUser.username" class="w3-bar-item w3-button w3-center w3-hide-small w3-padding-large w3-hover-white" title="Messages"><i class="fa fa-envelope"style="font-size:19px;"></i></a>
+  <a href="#/chat" ng-show="currentUser.username" class="w3-bar-item w3-button w3-center w3-hide-small w3-padding-large w3-hover-white" title="chat"><i class="fa fa-envelope"style="font-size:19px;"></i></a>
   
  
   <div ng-show="currentUser.username"  class="w3-dropdown-hover w3-hide-small w3-center w3-hover-white">
@@ -309,4 +309,13 @@ function topFunction() {
 <script type="text/javascript" src="controllers/homecontroller.js"></script>
 <script type="text/javascript" src="services/FriendService.js"></script>
 <script type="text/javascript" src="controllers/friendcontroller.js"></script>
+
+<script type="text/javascript" src="services/chatservice.js"></script>
+<script type="text/javascript" src="controllers/chatcontroller.js"></script>
+
+
+
+
+<script type="text/javascript" src="js/sockjs/sockjs.min.js"></script>
+<script type="text/javascript" src="js/stomp/dist/stomp.min.js"></script>
 </html>

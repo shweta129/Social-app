@@ -33,13 +33,16 @@ public  class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer
 
 	
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
+		System.out.println("CONFIGURE message broker registry");
 		registry.enableSimpleBroker("/queue/" ,  "/topic/"); //server to broker to client or to send data from server to client
 		//queue is for chat message. ie to send chat messages
 		//topic is for newly joined user -- to notify the newly joined username
 		//communication direction from server to client
 		//client will recieve the message by subscribing $scope.subscribe("/topic/join",..)
 		//in client side ..send("/app/join",...)
+		
 		registry.setApplicationDestinationPrefixes("/app"); //from client to server
+		
 		
 	}
 	

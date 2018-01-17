@@ -113,6 +113,12 @@ app.config(function($routeProvider){
 	
 	})
 	
+	.when('/chat',{                   
+	  templateUrl:'views/chat.html',  //view ng-repeat="p in persons"
+	   controller:'ChatCtrl'       
+	
+	})
+	
 	.otherwise('/login',{
 	  templateUrl:'views/loginForm.html',     //view ng-repeat="p in persons"
 	  controller:'UserController'   })

@@ -21,11 +21,24 @@ public class SockController {
 	//list of username's who has joined the chat room
 	private List<String> users=new ArrayList<String>();
 	//$stompClient.subscribeMapping("/app/join/ayush")
+	
+	
+	
+	@Autowired
+	public SockController(SimpMessagingTemplate messagingTemplate) {
+	       super();
+		 this.messagingTemplate = messagingTemplate;
+	}
+	
 	@SubscribeMapping("/join/{username}")//send and receiving message using subscribe mapping or reterning message to client
-	public List<String> sandy(@DestinationVariable String username){
-	if(!users.contains(username))
-		 users.add(username);
+	public List<String> join(@DestinationVariable("username")  String username){
+		System.out.println("username in sockcontroller" + username);
+		
+	if(!users.contains(username)){
+		 users.add(username);}
+	
 	messagingTemplate.convertAndSend("/topic/join",username);//all the other users who has already joined the chat room
+	
 	return users;//newly joind users
 }
 	@MessageMapping("/chat") //receiving message using subscribe mapping

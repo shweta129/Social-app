@@ -29,9 +29,40 @@ color:#67C8FF;
 /* background-color:orange; */
 }
 </style>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
+
+<link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="js/themes/explorer/theme.css" media="all" rel="stylesheet" type="text/css" />
+<script src="js/fileinput.js" type="text/javascript"></script>
+<script src="themes/explorer/theme.js" type="text/javascript"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"></script> -->
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<!-- <center><a href="http://www.fillster.com/animated-glitters/1/" target="_blank"><img src="http://www.fillster.com/images/glitters/136n.gif" border="0" ></a><br /><a style="font-size: 12px;"  target="_blank"></a></center> -->
+
 <body class="w3-light-grey">
 
-	
+<div class="container">
+
+<input type="file" name="image" class="file" data-upload-url="http://localhost:8080/SocialAppMRest/uploadblogimage/{{blogPost.id}}" data-preview-file-type="any">
+</div>	
 
 
 	<!-- w3-content defines a container for fixed size centered content, 
@@ -69,7 +100,8 @@ and is wrapped around the whole page content, except for the footer in this exam
 				
 				<!-- <center><a href="#/blogimage/{{blogPost.id}}" ng-if="currentUser.username==blogPost.postedBy.username"><button ng-show="currentUser.username==blogPost.postedBy.username" class="w3-btn w3-white w3-border w3-border-red w3-round-large" role="button">Upload Image</button></a></center>    -->
 				 
-				  <a href="#/blogimage/{{blogPost.id}}" ng-if="currentUser.username==blogPost.postedBy.username"><button   ng-show="currentUser.username==blogPost.postedBy.username" style="align:right;margin-left:700px;" class="w3-button w3-white w3-border w3-border-teal w3-round-large"  data-toggle="collapse" data-target="#blogimage">
+				  <a  ng-if="currentUser.username==blogPost.postedBy.username">
+				  <button   ng-show="currentUser.username==blogPost.postedBy.username" style="align:right;margin-left:700px;" class="w3-button w3-white w3-border w3-border-teal w3-round-large"  data-toggle="collapse" data-target="#blogimage">
  <span class="glyphicon glyphicon-upload"></span> &nbsp;Upload Image</button></a>
 				  
 			</div>
@@ -142,5 +174,6 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 		<!-- END BLOG ENTRIES -->
 	</div>
-
+</body>
+</html>
 

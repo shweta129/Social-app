@@ -1,9 +1,6 @@
 package com.niit.dto;
 
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-
 
 public class Chat {
 	private String from;
@@ -31,6 +28,9 @@ public class Chat {
 	}
 	
 	
-	
+	@Override
+	public String toString() {
+		return "Chat [message=" + message + ", to=" + to + "]";
+	}
 
 }

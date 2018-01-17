@@ -9,9 +9,9 @@ app.controller('BlogDetailController', function($scope, $location, $routeParams,
 	
 	
 	BlogService.getBlogPost(id).then(function(response) {
-		$scope.blogPost = response.data
+	   $scope.blogPost = response.data
 	}, function(response) {
-		if (response.status==401) {
+           if (response.status==401) {
 			$location.path('/login')
 
 		}
